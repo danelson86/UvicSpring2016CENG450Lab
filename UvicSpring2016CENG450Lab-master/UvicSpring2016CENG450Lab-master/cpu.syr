@@ -1,0 +1,808 @@
+Release 14.7 - xst P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Reading design: cpu.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "cpu.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "cpu"
+Output Format                      : NGC
+Target Device                      : xc3s1200e-5-fg320
+
+---- Source Options
+Top Module Name                    : cpu
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+WARNING:HDLParsers:3607 - Unit work/ALU is now defined in a different file.  It was defined in "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/ALU.vhd", and is now defined in "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/ALU.vhd".
+WARNING:HDLParsers:3607 - Unit work/ALU/Behavioral is now defined in a different file.  It was defined in "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/ALU.vhd", and is now defined in "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/ALU.vhd".
+WARNING:HDLParsers:3607 - Unit work/control is now defined in a different file.  It was defined in "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/control.vhd", and is now defined in "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/control.vhd".
+WARNING:HDLParsers:3607 - Unit work/control/Behavioral is now defined in a different file.  It was defined in "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/control.vhd", and is now defined in "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/control.vhd".
+WARNING:HDLParsers:3607 - Unit work/demux_3to1_16bit is now defined in a different file.  It was defined in "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/demux_3to1_16bit.vhd", and is now defined in "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/demux_3to1_16bit.vhd".
+WARNING:HDLParsers:3607 - Unit work/demux_3to1_16bit/Behavioral is now defined in a different file.  It was defined in "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/demux_3to1_16bit.vhd", and is now defined in "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/demux_3to1_16bit.vhd".
+WARNING:HDLParsers:3607 - Unit work/mux_3to1_16bit is now defined in a different file.  It was defined in "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/mux_3to1_16bit.vhd", and is now defined in "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/mux_3to1_16bit.vhd".
+WARNING:HDLParsers:3607 - Unit work/mux_3to1_16bit/Behavioral is now defined in a different file.  It was defined in "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/mux_3to1_16bit.vhd", and is now defined in "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/mux_3to1_16bit.vhd".
+WARNING:HDLParsers:3607 - Unit work/register_file is now defined in a different file.  It was defined in "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/register.vhd", and is now defined in "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/register.vhd".
+WARNING:HDLParsers:3607 - Unit work/register_file/behavioural is now defined in a different file.  It was defined in "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/register.vhd", and is now defined in "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/register.vhd".
+Compiling vhdl file "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/ALU.vhd" in Library work.
+Architecture behavioral of Entity alu is up to date.
+Compiling vhdl file "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/control.vhd" in Library work.
+Architecture behavioral of Entity control is up to date.
+Compiling vhdl file "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/demux_3to1_16bit.vhd" in Library work.
+Architecture behavioral of Entity demux_3to1_16bit is up to date.
+Compiling vhdl file "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/mux_3to1_16bit.vhd" in Library work.
+Architecture behavioral of Entity mux_3to1_16bit is up to date.
+Compiling vhdl file "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/register.vhd" in Library work.
+Architecture behavioural of Entity register_file is up to date.
+Compiling verilog file "cpu.vf" in library work
+Module <IBUF16_MXILINX_cpu> compiled
+Module <cpu> compiled
+No errors in compilation
+Analysis of file <"cpu.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <cpu> in library <work>.
+
+Analyzing hierarchy for entity <alu> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <register_file> in library <work> (architecture <behavioural>).
+
+Analyzing hierarchy for entity <control> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <mux_3to1_16bit> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for module <IBUF16_MXILINX_cpu> in library <work>.
+
+Analyzing hierarchy for entity <demux_3to1_16bit> in library <work> (architecture <behavioral>).
+
+WARNING:Xst:2591 - "cpu.vf" line 168: attribute on instance <IBUF_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 168: attribute on instance <IFD_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 168: attribute on instance <IOSTANDARD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 172: attribute on instance <IBUF_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 172: attribute on instance <IFD_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 172: attribute on instance <IOSTANDARD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 32: attribute on instance <IBUF_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 32: attribute on instance <IFD_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 32: attribute on instance <IOSTANDARD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 36: attribute on instance <IBUF_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 36: attribute on instance <IFD_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 36: attribute on instance <IOSTANDARD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 40: attribute on instance <IBUF_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 40: attribute on instance <IFD_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 40: attribute on instance <IOSTANDARD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 44: attribute on instance <IBUF_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 44: attribute on instance <IFD_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 44: attribute on instance <IOSTANDARD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 48: attribute on instance <IBUF_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 48: attribute on instance <IFD_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 48: attribute on instance <IOSTANDARD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 52: attribute on instance <IBUF_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 52: attribute on instance <IFD_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 52: attribute on instance <IOSTANDARD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 56: attribute on instance <IBUF_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 56: attribute on instance <IFD_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 56: attribute on instance <IOSTANDARD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 60: attribute on instance <IBUF_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 60: attribute on instance <IFD_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 60: attribute on instance <IOSTANDARD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 64: attribute on instance <IBUF_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 64: attribute on instance <IFD_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 64: attribute on instance <IOSTANDARD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 68: attribute on instance <IBUF_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 68: attribute on instance <IFD_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 68: attribute on instance <IOSTANDARD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 72: attribute on instance <IBUF_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 72: attribute on instance <IFD_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 72: attribute on instance <IOSTANDARD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 76: attribute on instance <IBUF_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 76: attribute on instance <IFD_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 76: attribute on instance <IOSTANDARD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 80: attribute on instance <IBUF_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 80: attribute on instance <IFD_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 80: attribute on instance <IOSTANDARD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 84: attribute on instance <IBUF_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 84: attribute on instance <IFD_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 84: attribute on instance <IOSTANDARD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 88: attribute on instance <IBUF_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 88: attribute on instance <IFD_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 88: attribute on instance <IOSTANDARD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 92: attribute on instance <IBUF_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 92: attribute on instance <IFD_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 92: attribute on instance <IOSTANDARD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <cpu>.
+Module <cpu> is correct for synthesis.
+ 
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <XLXI_29> in unit <cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <XLXI_29> in unit <cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <XLXI_29> in unit <cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <XLXI_29> in unit <cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <XLXI_29> in unit <cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <XLXI_30> in unit <cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <XLXI_30> in unit <cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <XLXI_30> in unit <cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <XLXI_30> in unit <cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <XLXI_30> in unit <cpu>.
+    Set user-defined property "HU_SET =  XLXI_42_0" for instance <XLXI_42> in unit <cpu>.
+Analyzing Entity <alu> in library <work> (Architecture <behavioral>).
+Entity <alu> analyzed. Unit <alu> generated.
+
+Analyzing Entity <register_file> in library <work> (Architecture <behavioural>).
+Entity <register_file> analyzed. Unit <register_file> generated.
+
+Analyzing Entity <control> in library <work> (Architecture <behavioral>).
+Entity <control> analyzed. Unit <control> generated.
+
+Analyzing Entity <mux_3to1_16bit> in library <work> (Architecture <behavioral>).
+Entity <mux_3to1_16bit> analyzed. Unit <mux_3to1_16bit> generated.
+
+Analyzing module <IBUF16_MXILINX_cpu> in library <work>.
+Module <IBUF16_MXILINX_cpu> is correct for synthesis.
+ 
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_30> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_30> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_30> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_30> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_30> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_31> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_31> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_31> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_31> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_31> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_32> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_32> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_32> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_32> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_32> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_33> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_33> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_33> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_33> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_33> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_34> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_34> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_34> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_34> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_34> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_35> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_35> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_35> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_35> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_35> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_36> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_36> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_36> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_36> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_36> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_37> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_37> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_37> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_37> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_37> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_38> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_38> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_38> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_38> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_38> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_39> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_39> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_39> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_39> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_39> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_40> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_40> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_40> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_40> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_40> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_41> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_41> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_41> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_41> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_41> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_42> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_42> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_42> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_42> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_42> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_43> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_43> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_43> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_43> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_43> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_44> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_44> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_44> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_44> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_44> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_45> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_45> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_45> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_45> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_45> in unit <IBUF16_MXILINX_cpu>.
+Analyzing Entity <demux_3to1_16bit> in library <work> (Architecture <behavioral>).
+Entity <demux_3to1_16bit> analyzed. Unit <demux_3to1_16bit> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <alu>.
+    Related source file is "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/ALU.vhd".
+WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:643 - "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/ALU.vhd" line 30: The result of a 16x16-bit multiplication is partially used. Only the 16 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+    Found 1-bit register for signal <z_flag>.
+    Found 1-bit register for signal <n_flag>.
+    Found 16-bit 8-to-1 multiplexer for signal <calc_result>.
+    Found 16-bit addsub for signal <calc_result$addsub0000>.
+    Found 16x16-bit multiplier for signal <calc_result$mult0001> created at line 30.
+    Found 16-bit shifter logical right for signal <calc_result$shift0004> created at line 38.
+    Found 16-bit shifter logical left for signal <calc_result$shift0005> created at line 40.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Multiplier(s).
+	inferred  16 Multiplexer(s).
+	inferred   2 Combinational logic shifter(s).
+Unit <alu> synthesized.
+
+
+Synthesizing Unit <register_file>.
+    Related source file is "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/register.vhd".
+    Found 16-bit 8-to-1 multiplexer for signal <rd_data1>.
+    Found 16-bit 8-to-1 multiplexer for signal <rd_data2>.
+    Found 128-bit register for signal <reg_file>.
+    Summary:
+	inferred 128 D-type flip-flop(s).
+	inferred  32 Multiplexer(s).
+Unit <register_file> synthesized.
+
+
+Synthesizing Unit <control>.
+    Related source file is "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/control.vhd".
+WARNING:Xst:647 - Input <CLK> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <RST> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <m1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <imm> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <disps> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <disp1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <control> synthesized.
+
+
+Synthesizing Unit <mux_3to1_16bit>.
+    Related source file is "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/mux_3to1_16bit.vhd".
+Unit <mux_3to1_16bit> synthesized.
+
+
+Synthesizing Unit <demux_3to1_16bit>.
+    Related source file is "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/demux_3to1_16bit.vhd".
+Unit <demux_3to1_16bit> synthesized.
+
+
+Synthesizing Unit <IBUF16_MXILINX_cpu>.
+    Related source file is "cpu.vf".
+Unit <IBUF16_MXILINX_cpu> synthesized.
+
+
+Synthesizing Unit <cpu>.
+    Related source file is "cpu.vf".
+WARNING:Xst:647 - Input <ADDR> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <XLXN_206> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000000000.
+Unit <cpu> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 1
+ 16x16-bit multiplier                                  : 1
+# Adders/Subtractors                                   : 1
+ 16-bit addsub                                         : 1
+# Registers                                            : 10
+ 1-bit register                                        : 2
+ 16-bit register                                       : 8
+# Multiplexers                                         : 3
+ 16-bit 8-to-1 multiplexer                             : 3
+# Logic shifters                                       : 2
+ 16-bit shifter logical left                           : 1
+ 16-bit shifter logical right                          : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <reg_file_2_12> in Unit <XLXI_2> is equivalent to the following 6 FFs/Latches, which will be removed : <reg_file_0_12> <reg_file_1_12> <reg_file_4_12> <reg_file_7_12> <reg_file_5_12> <reg_file_6_12> 
+INFO:Xst:2261 - The FF/Latch <reg_file_2_6> in Unit <XLXI_2> is equivalent to the following 6 FFs/Latches, which will be removed : <reg_file_0_6> <reg_file_3_6> <reg_file_4_6> <reg_file_7_6> <reg_file_5_6> <reg_file_6_6> 
+INFO:Xst:2261 - The FF/Latch <reg_file_2_1> in Unit <XLXI_2> is equivalent to the following 4 FFs/Latches, which will be removed : <reg_file_1_1> <reg_file_3_1> <reg_file_4_1> <reg_file_7_1> 
+INFO:Xst:2261 - The FF/Latch <reg_file_0_1> in Unit <XLXI_2> is equivalent to the following 2 FFs/Latches, which will be removed : <reg_file_5_1> <reg_file_6_1> 
+INFO:Xst:2261 - The FF/Latch <reg_file_2_13> in Unit <XLXI_2> is equivalent to the following 6 FFs/Latches, which will be removed : <reg_file_0_13> <reg_file_1_13> <reg_file_4_13> <reg_file_7_13> <reg_file_5_13> <reg_file_6_13> 
+INFO:Xst:2261 - The FF/Latch <reg_file_2_7> in Unit <XLXI_2> is equivalent to the following 6 FFs/Latches, which will be removed : <reg_file_0_7> <reg_file_3_7> <reg_file_4_7> <reg_file_7_7> <reg_file_5_7> <reg_file_6_7> 
+INFO:Xst:2261 - The FF/Latch <reg_file_2_2> in Unit <XLXI_2> is equivalent to the following 5 FFs/Latches, which will be removed : <reg_file_1_2> <reg_file_3_2> <reg_file_4_2> <reg_file_5_2> <reg_file_6_2> 
+INFO:Xst:2261 - The FF/Latch <reg_file_0_2> in Unit <XLXI_2> is equivalent to the following FF/Latch, which will be removed : <reg_file_7_2> 
+INFO:Xst:2261 - The FF/Latch <reg_file_2_14> in Unit <XLXI_2> is equivalent to the following 6 FFs/Latches, which will be removed : <reg_file_0_14> <reg_file_1_14> <reg_file_4_14> <reg_file_7_14> <reg_file_5_14> <reg_file_6_14> 
+INFO:Xst:2261 - The FF/Latch <reg_file_0_8> in Unit <XLXI_2> is equivalent to the following 6 FFs/Latches, which will be removed : <reg_file_1_8> <reg_file_3_8> <reg_file_4_8> <reg_file_7_8> <reg_file_5_8> <reg_file_6_8> 
+INFO:Xst:2261 - The FF/Latch <reg_file_2_3> in Unit <XLXI_2> is equivalent to the following 6 FFs/Latches, which will be removed : <reg_file_1_3> <reg_file_3_3> <reg_file_4_3> <reg_file_7_3> <reg_file_5_3> <reg_file_6_3> 
+INFO:Xst:2261 - The FF/Latch <reg_file_2_15> in Unit <XLXI_2> is equivalent to the following 6 FFs/Latches, which will be removed : <reg_file_0_15> <reg_file_1_15> <reg_file_4_15> <reg_file_7_15> <reg_file_5_15> <reg_file_6_15> 
+INFO:Xst:2261 - The FF/Latch <reg_file_0_9> in Unit <XLXI_2> is equivalent to the following 6 FFs/Latches, which will be removed : <reg_file_1_9> <reg_file_3_9> <reg_file_4_9> <reg_file_7_9> <reg_file_5_9> <reg_file_6_9> 
+INFO:Xst:2261 - The FF/Latch <reg_file_0_10> in Unit <XLXI_2> is equivalent to the following 6 FFs/Latches, which will be removed : <reg_file_1_10> <reg_file_3_10> <reg_file_4_10> <reg_file_7_10> <reg_file_5_10> <reg_file_6_10> 
+INFO:Xst:2261 - The FF/Latch <reg_file_2_4> in Unit <XLXI_2> is equivalent to the following 6 FFs/Latches, which will be removed : <reg_file_0_4> <reg_file_3_4> <reg_file_4_4> <reg_file_7_4> <reg_file_5_4> <reg_file_6_4> 
+INFO:Xst:2261 - The FF/Latch <reg_file_0_11> in Unit <XLXI_2> is equivalent to the following 6 FFs/Latches, which will be removed : <reg_file_1_11> <reg_file_3_11> <reg_file_4_11> <reg_file_7_11> <reg_file_5_11> <reg_file_6_11> 
+INFO:Xst:2261 - The FF/Latch <reg_file_2_5> in Unit <XLXI_2> is equivalent to the following 6 FFs/Latches, which will be removed : <reg_file_0_5> <reg_file_3_5> <reg_file_4_5> <reg_file_7_5> <reg_file_5_5> <reg_file_6_5> 
+INFO:Xst:2261 - The FF/Latch <reg_file_2_0> in Unit <XLXI_2> is equivalent to the following 4 FFs/Latches, which will be removed : <reg_file_1_0> <reg_file_3_0> <reg_file_7_0> <reg_file_5_0> 
+INFO:Xst:2261 - The FF/Latch <reg_file_0_0> in Unit <XLXI_2> is equivalent to the following 2 FFs/Latches, which will be removed : <reg_file_4_0> <reg_file_6_0> 
+WARNING:Xst:1293 - FF/Latch <reg_file_2_0> has a constant value of 0 in block <XLXI_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_file_2_1> has a constant value of 0 in block <XLXI_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_file_2_2> has a constant value of 0 in block <XLXI_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_file_2_3> has a constant value of 0 in block <XLXI_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_file_2_4> has a constant value of 0 in block <XLXI_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_file_2_5> has a constant value of 0 in block <XLXI_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_file_2_6> has a constant value of 0 in block <XLXI_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_file_2_7> has a constant value of 0 in block <XLXI_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_file_2_12> has a constant value of 0 in block <XLXI_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_file_2_13> has a constant value of 0 in block <XLXI_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_file_2_14> has a constant value of 0 in block <XLXI_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_file_2_15> has a constant value of 0 in block <XLXI_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_file_0_8> has a constant value of 0 in block <XLXI_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_file_0_9> has a constant value of 0 in block <XLXI_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_file_0_10> has a constant value of 0 in block <XLXI_2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg_file_0_11> has a constant value of 0 in block <XLXI_2>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 1
+ 16x16-bit multiplier                                  : 1
+# Adders/Subtractors                                   : 1
+ 16-bit addsub                                         : 1
+# Registers                                            : 130
+ Flip-Flops                                            : 130
+# Multiplexers                                         : 33
+ 1-bit 8-to-1 multiplexer                              : 32
+ 16-bit 8-to-1 multiplexer                             : 1
+# Logic shifters                                       : 2
+ 16-bit shifter logical left                           : 1
+ 16-bit shifter logical right                          : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <cpu> ...
+
+Optimizing unit <alu> ...
+
+Optimizing unit <register_file> ...
+
+Optimizing unit <IBUF16_MXILINX_cpu> ...
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_1_3> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_1_8> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_1_9> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_1_10> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_1_11> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_1_12> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_1_13> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_1_14> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_1_15> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_3_0> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_3_1> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_3_2> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_3_3> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_3_4> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_3_5> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_3_6> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_3_7> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_3_8> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_3_9> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_3_10> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_3_11> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_1> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_2> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_3> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_4> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_5> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_2_0> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_2_1> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_2_2> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_2_3> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_2_4> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_2_5> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_2_6> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_2_7> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_2_12> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_2_13> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_2_14> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_2_15> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_0_4> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_0_5> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_0_6> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_0_7> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_0_8> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_0_9> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_0_10> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_0_11> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_0_12> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_0_13> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_0_14> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_0_15> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_1_0> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_1_1> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_1_2> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_3> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_4> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_5> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_6> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_7> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_8> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_9> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_10> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_11> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_12> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_13> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_14> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_15> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_2> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_3> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_4> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_5> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_6> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_7> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_8> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_9> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_10> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_11> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_12> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_13> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_14> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_15> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_6> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_7> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_8> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_9> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_10> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_11> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_12> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_13> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_14> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_15> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_0> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_1> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_3> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_4> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_5> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_6> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_7> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_8> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_9> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_10> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_11> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_12> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_13> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_14> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_15> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_0> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_2> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/reg_file_7_2> is unconnected in block <cpu>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/reg_file_5_1> is unconnected in block <cpu>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/reg_file_6_1> is unconnected in block <cpu>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/reg_file_3_15> is unconnected in block <cpu>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/reg_file_3_14> is unconnected in block <cpu>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/reg_file_3_13> is unconnected in block <cpu>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/reg_file_3_12> is unconnected in block <cpu>.
+WARNING:Xst:1426 - The value init of the FF/Latch XLXI_2/reg_file_1_4 hinder the constant cleaning in the block cpu.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch XLXI_2/reg_file_1_5 hinder the constant cleaning in the block cpu.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch XLXI_2/reg_file_1_6 hinder the constant cleaning in the block cpu.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch XLXI_2/reg_file_1_7 hinder the constant cleaning in the block cpu.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch XLXI_2/reg_file_2_8 hinder the constant cleaning in the block cpu.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch XLXI_2/reg_file_2_9 hinder the constant cleaning in the block cpu.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch XLXI_2/reg_file_2_10 hinder the constant cleaning in the block cpu.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch XLXI_2/reg_file_2_11 hinder the constant cleaning in the block cpu.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/reg_file_2_9> is unconnected in block <cpu>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/reg_file_2_8> is unconnected in block <cpu>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/reg_file_1_7> is unconnected in block <cpu>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/reg_file_1_6> is unconnected in block <cpu>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/reg_file_1_5> is unconnected in block <cpu>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/reg_file_1_4> is unconnected in block <cpu>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/reg_file_2_11> is unconnected in block <cpu>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/reg_file_2_10> is unconnected in block <cpu>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/reg_file_4_0> is unconnected in block <cpu>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/reg_file_6_0> is unconnected in block <cpu>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_1/Mmult_calc_result_mult0001> is unconnected in block <cpu>.
+Found area constraint ratio of 100 (+ 5) on block cpu, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 6
+ Flip-Flops                                            : 6
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : cpu.ngr
+Top Level Output File Name         : cpu
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 59
+
+Cell Usage :
+# BELS                             : 3
+#      GND                         : 1
+#      LUT4                        : 1
+#      VCC                         : 1
+# FlipFlops/Latches                : 6
+#      FDR                         : 2
+#      FDRE_1                      : 4
+# Clock Buffers                    : 1
+#      BUFG                        : 1
+# IO Buffers                       : 52
+#      IBUF                        : 18
+#      OBUF                        : 34
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s1200efg320-5 
+
+ Number of Slices:                        3  out of   8672     0%  
+ Number of Slice Flip Flops:              5  out of  17344     0%  
+ Number of 4 input LUTs:                  1  out of  17344     0%  
+ Number of IOs:                          59
+ Number of bonded IOBs:                  52  out of    250    20%  
+    IOB Flip Flops:                       1
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CLK                                | IBUF+BUFG              | 6     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 5.620ns (Maximum Frequency: 177.939MHz)
+   Minimum input arrival time before clock: 2.400ns
+   Maximum output required time after clock: 4.040ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK'
+  Clock period: 5.620ns (frequency: 177.939MHz)
+  Total number of paths / destination ports: 8 / 5
+-------------------------------------------------------------------------
+Delay:               2.810ns (Levels of Logic = 1)
+  Source:            XLXI_2/reg_file_0_2 (FF)
+  Destination:       XLXI_1/z_flag (FF)
+  Source Clock:      CLK falling
+  Destination Clock: CLK rising
+
+  Data Path: XLXI_2/reg_file_0_2 to XLXI_1/z_flag
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE_1:C->Q           2   0.514   0.532  XLXI_2/reg_file_0_2 (XLXI_2/reg_file_0_2)
+     LUT4:I0->O            1   0.612   0.357  XLXI_1/z_flag_not00011 (XLXI_1/z_flag_not0001)
+     FDR:R                     0.795          XLXI_1/z_flag
+    ----------------------------------------
+    Total                      2.810ns (1.921ns logic, 0.889ns route)
+                                       (68.4% logic, 31.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              2.400ns (Levels of Logic = 1)
+  Source:            RST (PAD)
+  Destination:       XLXI_2/reg_file_0_3 (FF)
+  Destination Clock: CLK falling
+
+  Data Path: RST to XLXI_2/reg_file_0_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   1.106   0.499  XLXI_30 (XLXN_275)
+     FDRE_1:R                  0.795          XLXI_2/reg_file_0_0
+    ----------------------------------------
+    Total                      2.400ns (1.901ns logic, 0.499ns route)
+                                       (79.2% logic, 20.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              4.040ns (Levels of Logic = 1)
+  Source:            XLXI_1/z_flag (FF)
+  Destination:       Z_FLAG (PAD)
+  Source Clock:      CLK rising
+
+  Data Path: XLXI_1/z_flag to Z_FLAG
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              1   0.514   0.357  XLXI_1/z_flag (XLXI_1/z_flag)
+     OBUF:I->O                 3.169          Z_FLAG_OBUF (Z_FLAG)
+    ----------------------------------------
+    Total                      4.040ns (3.683ns logic, 0.357ns route)
+                                       (91.2% logic, 8.8% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.19 secs
+ 
+--> 
+
+Total memory usage is 267480 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  223 (   0 filtered)
+Number of infos    :   20 (   0 filtered)
+
