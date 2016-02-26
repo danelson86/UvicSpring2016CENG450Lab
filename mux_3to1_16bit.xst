@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/OWner/Documents/CENG 450/lab/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/OWner/Documents/CENG 450/lab/xst"
+elaborate
+-ifn mux_3to1_16bit.prj
+-ifmt mixed

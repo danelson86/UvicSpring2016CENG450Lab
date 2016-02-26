@@ -1,0 +1,2 @@
+vhdl isim_temp "busmux_16bit.vhd"
+vhdl isim_temp "busmux_16bit_tb.vhd"

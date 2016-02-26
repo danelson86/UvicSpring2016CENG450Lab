@@ -1,0 +1,9 @@
+vhdtdtfi -lib work control.vhd -prj lab2 -o control.spl -module control -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e control.spl {C:/Users/OWner/Documents/CENG 450/lab/control.sym} 
+vhdtdtfi -lib work control.vhd -prj lab2 -o control.spl -module control -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e control.spl {C:/Users/OWner/Documents/CENG 450/lab/control.sym} 
+vhdtdtfi -lib work control.vhd -prj lab2 -o control.spl -module control -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e control.spl {C:/Users/OWner/Documents/CENG 450/lab/control.sym} 
+vhdtdtfi -prj lab2 -o "C:/Users/OWner/Documents/CENG 450/lab/control.tfi" -module control -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror -lib work control.vhd 
+vhdtdtfi -lib work control.vhd -prj lab2 -o control.spl -module control -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e control.spl {C:/Users/OWner/Documents/CENG 450/lab/control.sym} 

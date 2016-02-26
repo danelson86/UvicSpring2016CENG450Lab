@@ -1,0 +1,13 @@
+[Inputs]
+CLK
+RST
+=INSTR[15:0]=
+[Outputs]
+RegWriteEn
+=RegRead1[2:0]=
+=RegRead2[2:0]=
+=RegWrite[2:0]=
+=ALUMode[2:0]=
+=ImmData[15:0]=
+=ALUIN2Src[1:0]=
+[BiDir]

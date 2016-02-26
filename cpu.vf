@@ -1,0 +1,176 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : cpu.vf
+// /___/   /\     Timestamp : 02/22/2016 19:45:50
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan3e -verilog "C:/Users/OWner/Documents/CENG 450/lab/cpu.vf" -w "C:/Users/OWner/Documents/CENG 450/lab/cpu.sch"
+//Design Name: cpu
+//Device: spartan3e
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module IBUF16_MXILINX_cpu(I, 
+                          O);
+
+    input [15:0] I;
+   output [15:0] O;
+   
+   
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_30 (.I(I[8]), 
+                 .O(O[8]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_31 (.I(I[9]), 
+                 .O(O[9]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_32 (.I(I[10]), 
+                 .O(O[10]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_33 (.I(I[11]), 
+                 .O(O[11]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_34 (.I(I[15]), 
+                 .O(O[15]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_35 (.I(I[14]), 
+                 .O(O[14]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_36 (.I(I[13]), 
+                 .O(O[13]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_37 (.I(I[12]), 
+                 .O(O[12]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_38 (.I(I[4]), 
+                 .O(O[4]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_39 (.I(I[5]), 
+                 .O(O[5]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_40 (.I(I[6]), 
+                 .O(O[6]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_41 (.I(I[7]), 
+                 .O(O[7]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_42 (.I(I[3]), 
+                 .O(O[3]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_43 (.I(I[2]), 
+                 .O(O[2]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_44 (.I(I[1]), 
+                 .O(O[1]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  I_36_45 (.I(I[0]), 
+                 .O(O[0]));
+endmodule
+`timescale 1ns / 1ps
+
+module cpu(CLK, 
+           EXT_IN, 
+           INSTR, 
+           RST, 
+           N_FLAG, 
+           RESULT, 
+           Z_FLAG);
+
+    input CLK;
+    input [15:0] EXT_IN;
+    input [15:0] INSTR;
+    input RST;
+   output N_FLAG;
+   output [15:0] RESULT;
+   output Z_FLAG;
+   
+   wire XLXN_8;
+   wire [15:0] XLXN_13;
+   wire [2:0] XLXN_23;
+   wire [2:0] XLXN_24;
+   wire [2:0] XLXN_48;
+   wire [2:0] XLXN_49;
+   wire [15:0] XLXN_87;
+   wire [15:0] XLXN_97;
+   wire [15:0] XLXN_103;
+   wire [1:0] XLXN_104;
+   wire [15:0] XLXN_206;
+   wire [15:0] XLXN_207;
+   wire XLXN_215;
+   wire XLXN_216;
+   wire [15:0] RESULT_DUMMY;
+   
+   assign RESULT[15:0] = RESULT_DUMMY[15:0];
+   ALU  XLXI_1 (.alu_mode(XLXN_49[2:0]), 
+               .clk(XLXN_215), 
+               .in1(XLXN_87[15:0]), 
+               .in2(XLXN_103[15:0]), 
+               .rst(XLXN_216), 
+               .n_flag(N_FLAG), 
+               .result(RESULT_DUMMY[15:0]), 
+               .z_flag(Z_FLAG));
+   register_file  XLXI_2 (.clk(XLXN_215), 
+                         .rd_index1(XLXN_23[2:0]), 
+                         .rd_index2(XLXN_24[2:0]), 
+                         .rst(XLXN_216), 
+                         .wr_data(RESULT_DUMMY[15:0]), 
+                         .wr_enable(XLXN_8), 
+                         .wr_index(XLXN_48[2:0]), 
+                         .rd_data1(XLXN_87[15:0]), 
+                         .rd_data2(XLXN_97[15:0]));
+   control  XLXI_4 (.CLK(XLXN_215), 
+                   .INSTR(XLXN_206[15:0]), 
+                   .RST(XLXN_216), 
+                   .ALUIN2Src(XLXN_104[1:0]), 
+                   .ALUMode(XLXN_49[2:0]), 
+                   .ImmData(XLXN_13[15:0]), 
+                   .RegRead1(XLXN_23[2:0]), 
+                   .RegRead2(XLXN_24[2:0]), 
+                   .RegWrite(XLXN_48[2:0]), 
+                   .RegWriteEn(XLXN_8));
+   mux_3to1_16bit  XLXI_5 (.in1(XLXN_97[15:0]), 
+                          .in2(XLXN_13[15:0]), 
+                          .in3(XLXN_207[15:0]), 
+                          .sel(XLXN_104[1:0]), 
+                          .muxout(XLXN_103[15:0]));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  XLXI_29 (.I(CLK), 
+                 .O(XLXN_215));
+   (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
+         IFD_DELAY_VALUE = "AUTO" *) 
+   IBUF  XLXI_30 (.I(RST), 
+                 .O(XLXN_216));
+   (* HU_SET = "XLXI_41_0" *) 
+   IBUF16_MXILINX_cpu  XLXI_41 (.I(INSTR[15:0]), 
+                               .O(XLXN_206[15:0]));
+   (* HU_SET = "XLXI_42_1" *) 
+   IBUF16_MXILINX_cpu  XLXI_42 (.I(EXT_IN[15:0]), 
+                               .O(XLXN_207[15:0]));
+endmodule

@@ -1,0 +1,5 @@
+vhdl work "register.vhd"
+vhdl work "mux_3to1_16bit.vhd"
+vhdl work "control.vhd"
+vhdl work "ALU.vhd"
+verilog work "cpu.vf"

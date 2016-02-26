@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/Users/OWner/Documents/CENG 450/lab/alu_test_isim_beh.exe" -prj "C:/Users/OWner/Documents/CENG 450/lab/alu_test_beh.prj" "work.alu_test" 

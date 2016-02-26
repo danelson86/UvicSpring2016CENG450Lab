@@ -1,0 +1,5 @@
+vhdl isim_temp "register.vhd"
+vhdl isim_temp "control.vhd"
+vhdl isim_temp "busmux_16bit.vhd"
+vhdl isim_temp "ALU.vhd"
+vhdl isim_temp "cpu_tb.vhd"
