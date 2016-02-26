@@ -1,0 +1,4 @@
+verilog work "ipcore_dir/blockram_16x4.v"
+verilog work "ram_16x16.vf"
+vhdl work "ram_16x16_tb.vhd"
+verilog work "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

@@ -1,41 +1,30 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/cpu_tb_isim_beh.exe -prj C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/cpu_tb_beh.prj work.cpu_tb work.glbl 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab-/ram_16x16_ram_16x16_sch_tb_isim_beh.exe -prj C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab-/ram_16x16_ram_16x16_sch_tb_beh.prj work.ram_16x16_ram_16x16_sch_tb work.glbl 
 ISim P.20131013 (signature 0x7708f090)
-Number of CPUs detected in this system: 4
-Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Number of CPUs detected in this system: 16
+Turning on mult-threading, number of parallel sub-compilation jobs: 32 
 Determining compilation order of HDL files
-Analyzing Verilog file "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/cpu.vf" into library work
+Analyzing Verilog file "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab-/ipcore_dir/blockram_16x4.v" into library work
+Analyzing Verilog file "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab-/ram_16x16.vf" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
-Parsing VHDL file "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/register.vhd" into library work
-Parsing VHDL file "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/mux_3to1_16bit.vhd" into library work
-Parsing VHDL file "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/demux_3to1_16bit.vhd" into library work
-Parsing VHDL file "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/demo_rom.vhd" into library work
-Parsing VHDL file "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/control.vhd" into library work
-Parsing VHDL file "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/ALU.vhd" into library work
-Parsing VHDL file "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/cpu_tb.vhd" into library work
+Parsing VHDL file "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab-/ram_16x16_tb.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling module glbl
-Compiling module IBUF
-Compiling module IBUF16_MXILINX_cpu
-Compiling module cpu
+Compiling module BLK_MEM_GEN_V7_3_output_stage(C_...
+Compiling module BLK_MEM_GEN_V7_3_softecc_output_...
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="spart...
+Compiling module blockram_16x4
+Compiling module ram_16x16
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package numeric_std
 Compiling package vcomponents
 Compiling package vl_types
-Compiling architecture behavioral of entity ALU [alu_default]
-Compiling package std_logic_arith
-Compiling package std_logic_unsigned
-Compiling architecture behavioural of entity register_file [register_file_default]
-Compiling architecture behavioral of entity control [control_default]
-Compiling architecture behavioral of entity mux_3to1_16bit [mux_3to1_16bit_default]
-Compiling architecture bhv of entity ROM_VHDL [rom_vhdl_default]
-Compiling architecture behavioral of entity demux_3to1_16bit [demux_3to1_16bit_default]
-Compiling architecture behavioral of entity cpu_tb
+Compiling architecture behavioral of entity ram_16x16_ram_16x16_sch_tb
 Time Resolution for simulation is 1ps.
-Waiting for 5 sub-compilation(s) to finish...
-Compiled 20 VHDL Units
-Compiled 4 Verilog Units
-Built simulation executable C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/cpu_tb_isim_beh.exe
-Fuse Memory Usage: 50088 KB
-Fuse CPU Usage: 843 ms
+Compiled 6 VHDL Units
+Compiled 7 Verilog Units
+Built simulation executable C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab-/ram_16x16_ram_16x16_sch_tb_isim_beh.exe
+Fuse Memory Usage: 54000 KB
+Fuse CPU Usage: 718 ms

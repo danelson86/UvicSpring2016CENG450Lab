@@ -1,0 +1,56 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : ram_16x16.vf
+// /___/   /\     Timestamp : 02/25/2016 21:22:05
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -sympath "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab-/ipcore_dir" -intstyle ise -family spartan3e -verilog "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab-/ram_16x16.vf" -w "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab-/ram_16x16.sch"
+//Design Name: ram_16x16
+//Device: spartan3e
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module ram_16x16(ADDR, 
+                 CLK, 
+                 D_IN, 
+                 WE, 
+                 D_OUT);
+
+    input [15:0] ADDR;
+    input CLK;
+    input [15:0] D_IN;
+    input WE;
+   output [15:0] D_OUT;
+   
+   
+   blockram_16x4  XLXI_5 (.addra(ADDR[15:0]), 
+                         .clka(CLK), 
+                         .dina(D_IN[15:12]), 
+                         .wea(WE), 
+                         .douta(D_OUT[15:12]));
+   blockram_16x4  XLXI_6 (.addra(ADDR[15:0]), 
+                         .clka(CLK), 
+                         .dina(D_IN[11:8]), 
+                         .wea(WE), 
+                         .douta(D_OUT[11:8]));
+   blockram_16x4  XLXI_7 (.addra(ADDR[15:0]), 
+                         .clka(CLK), 
+                         .dina(D_IN[7:4]), 
+                         .wea(WE), 
+                         .douta(D_OUT[7:4]));
+   blockram_16x4  XLXI_8 (.addra(ADDR[15:0]), 
+                         .clka(CLK), 
+                         .dina(D_IN[3:0]), 
+                         .wea(WE), 
+                         .douta(D_OUT[3:0]));
+endmodule
