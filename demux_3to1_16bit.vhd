@@ -16,9 +16,18 @@ begin
 	process(muxin, sel)
 	begin
 		case sel is
-			when "00" => muxout1 <= muxin;
-			when "01" => muxout2 <= muxin;
-			when others => muxout3 <= muxin;
+			when "00" => 
+				muxout1 <= muxin;
+				muxout2 <= X"0000";
+				muxout3 <= X"0000";
+			when "01" => 
+				muxout1 <= X"0000";
+				muxout2 <= muxin;
+				muxout3 <= X"0000";
+			when others => 
+				muxout1 <= X"0000";
+				muxout2 <= X"0000";
+				muxout3 <= muxin;
 		end case;
 	end process;
 

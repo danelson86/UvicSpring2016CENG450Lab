@@ -1,1 +1,1 @@
-sch2hdl,-sympath,C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab-/ipcore_dir,-intstyle,ise,-family,spartan3e,-verilog,C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab-/ram_16x16.vf,-w,C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab-/ram_16x16.sch
+sch2hdl,-sympath,C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/ipcore_dir,-intstyle,ise,-family,spartan3e,-verilog,C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/cpu.vf,-w,C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/cpu.sch

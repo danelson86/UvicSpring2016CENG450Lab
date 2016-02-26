@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.26 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.27 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Reading design: cpu.prj
 
@@ -98,20 +98,26 @@ Verilog 2001                       : YES
 Auto BRAM Packing                  : NO
 Slice Utilization Ratio Delta      : 5
 
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
 =========================================================================
 
 
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/ALU.vhd" in Library work.
+Compiling vhdl file "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/ALU.vhd" in Library work.
 Architecture behavioral of Entity alu is up to date.
-Compiling vhdl file "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/control.vhd" in Library work.
-Entity <control> compiled.
-Entity <control> (Architecture <behavioral>) compiled.
-Compiling vhdl file "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/mux_3to1_16bit.vhd" in Library work.
+Compiling vhdl file "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/control.vhd" in Library work.
+Architecture behavioral of Entity control is up to date.
+Compiling vhdl file "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/demo_rom.vhd" in Library work.
+Architecture bhv of Entity rom_vhdl is up to date.
+Compiling vhdl file "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/demux_3to1_16bit.vhd" in Library work.
+Architecture behavioral of Entity demux_3to1_16bit is up to date.
+Compiling vhdl file "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/mux_3to1_16bit.vhd" in Library work.
 Architecture behavioral of Entity mux_3to1_16bit is up to date.
-Compiling vhdl file "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/register.vhd" in Library work.
+Compiling vhdl file "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/register.vhd" in Library work.
 Architecture behavioural of Entity register_file is up to date.
 Compiling verilog file "cpu.vf" in library work
 Module <IBUF16_MXILINX_cpu> compiled
@@ -135,14 +141,16 @@ Analyzing hierarchy for entity <mux_3to1_16bit> in library <work> (architecture 
 
 Analyzing hierarchy for module <IBUF16_MXILINX_cpu> in library <work>.
 
-Analyzing hierarchy for module <IBUF16_MXILINX_cpu> in library <work>.
+Analyzing hierarchy for entity <rom_vhdl> in library <work> (architecture <bhv>).
 
-WARNING:Xst:2591 - "cpu.vf" line 164: attribute on instance <IBUF_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "cpu.vf" line 164: attribute on instance <IFD_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "cpu.vf" line 164: attribute on instance <IOSTANDARD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+Analyzing hierarchy for entity <demux_3to1_16bit> in library <work> (architecture <behavioral>).
+
 WARNING:Xst:2591 - "cpu.vf" line 168: attribute on instance <IBUF_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
 WARNING:Xst:2591 - "cpu.vf" line 168: attribute on instance <IFD_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
 WARNING:Xst:2591 - "cpu.vf" line 168: attribute on instance <IOSTANDARD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 172: attribute on instance <IBUF_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 172: attribute on instance <IFD_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "cpu.vf" line 172: attribute on instance <IOSTANDARD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
 WARNING:Xst:2591 - "cpu.vf" line 32: attribute on instance <IBUF_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
 WARNING:Xst:2591 - "cpu.vf" line 32: attribute on instance <IFD_DELAY_VALUE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
 WARNING:Xst:2591 - "cpu.vf" line 32: attribute on instance <IOSTANDARD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
@@ -208,8 +216,7 @@ Module <cpu> is correct for synthesis.
     Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <XLXI_30> in unit <cpu>.
     Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <XLXI_30> in unit <cpu>.
     Set user-defined property "IOSTANDARD =  DEFAULT" for instance <XLXI_30> in unit <cpu>.
-    Set user-defined property "HU_SET =  XLXI_41_0" for instance <XLXI_41> in unit <cpu>.
-    Set user-defined property "HU_SET =  XLXI_42_1" for instance <XLXI_42> in unit <cpu>.
+    Set user-defined property "HU_SET =  XLXI_42_0" for instance <XLXI_42> in unit <cpu>.
 Analyzing Entity <alu> in library <work> (Architecture <behavioral>).
 Entity <alu> analyzed. Unit <alu> generated.
 
@@ -222,172 +229,96 @@ Entity <control> analyzed. Unit <control> generated.
 Analyzing Entity <mux_3to1_16bit> in library <work> (Architecture <behavioral>).
 Entity <mux_3to1_16bit> analyzed. Unit <mux_3to1_16bit> generated.
 
-Analyzing module <IBUF16_MXILINX_cpu.1> in library <work>.
-Module <IBUF16_MXILINX_cpu.1> is correct for synthesis.
+Analyzing module <IBUF16_MXILINX_cpu> in library <work>.
+Module <IBUF16_MXILINX_cpu> is correct for synthesis.
  
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_30> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_30> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_30> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_30> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_30> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_31> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_31> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_31> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_31> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_31> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_32> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_32> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_32> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_32> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_32> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_33> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_33> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_33> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_33> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_33> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_34> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_34> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_34> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_34> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_34> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_35> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_35> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_35> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_35> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_35> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_36> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_36> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_36> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_36> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_36> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_37> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_37> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_37> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_37> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_37> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_38> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_38> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_38> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_38> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_38> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_39> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_39> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_39> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_39> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_39> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_40> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_40> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_40> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_40> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_40> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_41> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_41> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_41> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_41> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_41> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_42> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_42> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_42> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_42> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_42> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_43> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_43> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_43> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_43> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_43> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_44> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_44> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_44> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_44> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_44> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_45> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_45> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_45> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_45> in unit <IBUF16_MXILINX_cpu.1>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_45> in unit <IBUF16_MXILINX_cpu.1>.
-Analyzing module <IBUF16_MXILINX_cpu.2> in library <work>.
-Module <IBUF16_MXILINX_cpu.2> is correct for synthesis.
- 
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_30> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_30> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_30> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_30> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_30> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_31> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_31> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_31> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_31> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_31> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_32> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_32> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_32> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_32> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_32> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_33> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_33> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_33> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_33> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_33> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_34> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_34> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_34> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_34> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_34> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_35> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_35> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_35> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_35> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_35> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_36> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_36> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_36> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_36> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_36> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_37> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_37> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_37> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_37> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_37> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_38> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_38> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_38> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_38> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_38> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_39> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_39> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_39> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_39> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_39> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_40> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_40> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_40> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_40> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_40> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_41> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_41> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_41> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_41> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_41> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_42> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_42> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_42> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_42> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_42> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_43> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_43> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_43> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_43> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_43> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_44> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_44> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_44> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_44> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_44> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_45> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_45> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_45> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_45> in unit <IBUF16_MXILINX_cpu.2>.
-    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_45> in unit <IBUF16_MXILINX_cpu.2>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_30> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_30> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_30> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_30> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_30> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_31> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_31> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_31> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_31> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_31> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_32> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_32> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_32> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_32> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_32> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_33> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_33> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_33> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_33> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_33> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_34> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_34> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_34> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_34> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_34> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_35> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_35> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_35> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_35> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_35> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_36> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_36> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_36> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_36> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_36> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_37> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_37> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_37> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_37> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_37> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_38> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_38> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_38> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_38> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_38> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_39> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_39> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_39> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_39> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_39> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_40> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_40> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_40> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_40> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_40> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_41> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_41> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_41> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_41> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_41> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_42> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_42> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_42> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_42> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_42> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_43> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_43> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_43> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_43> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_43> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_44> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_44> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_44> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_44> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_44> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <I_36_45> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_45> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <I_36_45> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_45> in unit <IBUF16_MXILINX_cpu>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_45> in unit <IBUF16_MXILINX_cpu>.
+Analyzing Entity <rom_vhdl> in library <work> (Architecture <bhv>).
+WARNING:Xst:790 - "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/demo_rom.vhd" line 52: Index value(s) does not match array range, simulation mismatch.
+Entity <rom_vhdl> analyzed. Unit <rom_vhdl> generated.
+
+Analyzing Entity <demux_3to1_16bit> in library <work> (Architecture <behavioral>).
+Entity <demux_3to1_16bit> analyzed. Unit <demux_3to1_16bit> generated.
+
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -396,16 +327,16 @@ Module <IBUF16_MXILINX_cpu.2> is correct for synthesis.
 Performing bidirectional port resolution...
 
 Synthesizing Unit <alu>.
-    Related source file is "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/ALU.vhd".
+    Related source file is "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/ALU.vhd".
 WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:643 - "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/ALU.vhd" line 29: The result of a 16x16-bit multiplication is partially used. Only the 16 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/ALU.vhd" line 30: The result of a 16x16-bit multiplication is partially used. Only the 16 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
     Found 1-bit register for signal <z_flag>.
     Found 1-bit register for signal <n_flag>.
     Found 16-bit 8-to-1 multiplexer for signal <calc_result>.
     Found 16-bit addsub for signal <calc_result$addsub0000>.
-    Found 16x16-bit multiplier for signal <calc_result$mult0001> created at line 29.
-    Found 16-bit shifter logical right for signal <calc_result$shift0004> created at line 37.
-    Found 16-bit shifter logical left for signal <calc_result$shift0005> created at line 39.
+    Found 16x16-bit multiplier for signal <calc_result$mult0001> created at line 30.
+    Found 16-bit shifter logical right for signal <calc_result$shift0004> created at line 38.
+    Found 16-bit shifter logical left for signal <calc_result$shift0005> created at line 40.
     Summary:
 	inferred   2 D-type flip-flop(s).
 	inferred   1 Adder/Subtractor(s).
@@ -416,7 +347,7 @@ Unit <alu> synthesized.
 
 
 Synthesizing Unit <register_file>.
-    Related source file is "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/register.vhd".
+    Related source file is "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/register.vhd".
     Found 16-bit 8-to-1 multiplexer for signal <rd_data1>.
     Found 16-bit 8-to-1 multiplexer for signal <rd_data2>.
     Found 128-bit register for signal <reg_file>.
@@ -427,7 +358,7 @@ Unit <register_file> synthesized.
 
 
 Synthesizing Unit <control>.
-    Related source file is "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/control.vhd".
+    Related source file is "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/control.vhd".
 WARNING:Xst:647 - Input <CLK> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <RST> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:646 - Signal <m1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
@@ -438,18 +369,29 @@ Unit <control> synthesized.
 
 
 Synthesizing Unit <mux_3to1_16bit>.
-    Related source file is "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/mux_3to1_16bit.vhd".
+    Related source file is "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/mux_3to1_16bit.vhd".
 Unit <mux_3to1_16bit> synthesized.
 
 
-Synthesizing Unit <IBUF16_MXILINX_cpu_1>.
-    Related source file is "cpu.vf".
-Unit <IBUF16_MXILINX_cpu_1> synthesized.
+Synthesizing Unit <rom_vhdl>.
+    Related source file is "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/demo_rom.vhd".
+WARNING:Xst:647 - Input <addr<6:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 26x16-bit ROM for signal <data$rom0000> created at line 51.
+    Found 16-bit register for signal <data>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred  16 D-type flip-flop(s).
+Unit <rom_vhdl> synthesized.
 
 
-Synthesizing Unit <IBUF16_MXILINX_cpu_2>.
+Synthesizing Unit <demux_3to1_16bit>.
+    Related source file is "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/demux_3to1_16bit.vhd".
+Unit <demux_3to1_16bit> synthesized.
+
+
+Synthesizing Unit <IBUF16_MXILINX_cpu>.
     Related source file is "cpu.vf".
-Unit <IBUF16_MXILINX_cpu_2> synthesized.
+Unit <IBUF16_MXILINX_cpu> synthesized.
 
 
 Synthesizing Unit <cpu>.
@@ -462,13 +404,15 @@ INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmet
 HDL Synthesis Report
 
 Macro Statistics
+# ROMs                                                 : 1
+ 26x16-bit ROM                                         : 1
 # Multipliers                                          : 1
  16x16-bit multiplier                                  : 1
 # Adders/Subtractors                                   : 1
  16-bit addsub                                         : 1
-# Registers                                            : 10
+# Registers                                            : 11
  1-bit register                                        : 2
- 16-bit register                                       : 8
+ 16-bit register                                       : 9
 # Multiplexers                                         : 3
  16-bit 8-to-1 multiplexer                             : 3
 # Logic shifters                                       : 2
@@ -482,16 +426,22 @@ Macro Statistics
 =========================================================================
 
 
+Synthesizing (advanced) Unit <rom_vhdl>.
+INFO:Xst:3034 - In order to maximize performance and save block RAM resources, the small ROM <Mrom_data_rom0000> will be implemented on LUT. If you want to force its implementation on block, use option/constraint rom_style.
+Unit <rom_vhdl> synthesized (advanced).
+
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
+# ROMs                                                 : 1
+ 26x16-bit ROM                                         : 1
 # Multipliers                                          : 1
  16x16-bit multiplier                                  : 1
 # Adders/Subtractors                                   : 1
  16-bit addsub                                         : 1
-# Registers                                            : 130
- Flip-Flops                                            : 130
+# Registers                                            : 146
+ Flip-Flops                                            : 146
 # Multiplexers                                         : 33
  1-bit 8-to-1 multiplexer                              : 32
  16-bit 8-to-1 multiplexer                             : 1
@@ -504,6 +454,13 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1710 - FF/Latch <data_2> (without init value) has a constant value of 0 in block <rom_vhdl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_5> (without init value) has a constant value of 0 in block <rom_vhdl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_8> (without init value) has a constant value of 0 in block <rom_vhdl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_12> (without init value) has a constant value of 0 in block <rom_vhdl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_13> (without init value) has a constant value of 0 in block <rom_vhdl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_15> (without init value) has a constant value of 0 in block <rom_vhdl>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <data_3> in Unit <rom_vhdl> is equivalent to the following FF/Latch, which will be removed : <data_10> 
 
 Optimizing unit <cpu> ...
 
@@ -511,12 +468,76 @@ Optimizing unit <alu> ...
 
 Optimizing unit <register_file> ...
 
-Optimizing unit <IBUF16_MXILINX_cpu_1> ...
+Optimizing unit <rom_vhdl> ...
 
-Optimizing unit <IBUF16_MXILINX_cpu_2> ...
+Optimizing unit <IBUF16_MXILINX_cpu> ...
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_14> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_13> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_12> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_11> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_10> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_9> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_8> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_7> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_6> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_5> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_4> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_3> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_1> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_0> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_15> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_14> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_13> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_12> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_11> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_10> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_9> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_8> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_7> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_6> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_5> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_4> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_3> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_2> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_4_1> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_15> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_14> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_13> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_12> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_11> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_10> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_9> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_8> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_7> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_6> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_5> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_4> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_3> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_6_2> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_15> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_14> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_13> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_12> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_11> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_10> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_9> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_8> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_7> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_6> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_5> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_4> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_3> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_2> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_5_0> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_2/reg_file_7_15> has a constant value of 0 in block <cpu>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/reg_file_5_1> is unconnected in block <cpu>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/reg_file_6_1> is unconnected in block <cpu>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/reg_file_7_2> is unconnected in block <cpu>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/reg_file_4_0> is unconnected in block <cpu>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <XLXI_2/reg_file_6_0> is unconnected in block <cpu>.
 Found area constraint ratio of 100 (+ 5) on block cpu, actual ratio is 2.
 
 Final Macro Processing ...
@@ -525,8 +546,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 130
- Flip-Flops                                            : 130
+# Registers                                            : 75
+ Flip-Flops                                            : 75
 
 =========================================================================
 
@@ -552,32 +573,34 @@ Optimization Goal                  : Speed
 Keep Hierarchy                     : No
 
 Design Statistics
-# IOs                              : 52
+# IOs                              : 59
 
 Cell Usage :
-# BELS                             : 611
+# BELS                             : 506
 #      GND                         : 1
 #      INV                         : 1
-#      LUT2                        : 5
-#      LUT3                        : 194
-#      LUT3_D                      : 5
+#      LUT2                        : 33
+#      LUT3                        : 153
+#      LUT3_D                      : 11
 #      LUT3_L                      : 1
-#      LUT4                        : 185
-#      LUT4_D                      : 3
-#      LUT4_L                      : 1
+#      LUT4                        : 151
+#      LUT4_D                      : 15
+#      LUT4_L                      : 11
 #      MUXCY                       : 15
-#      MUXF5                       : 135
-#      MUXF6                       : 48
+#      MUXF5                       : 81
+#      MUXF6                       : 16
 #      VCC                         : 1
 #      XORCY                       : 16
-# FlipFlops/Latches                : 130
-#      FDR                         : 2
-#      FDRE_1                      : 128
+# FlipFlops/Latches                : 75
+#      FD                          : 4
+#      FDR                         : 3
+#      FDRE_1                      : 64
+#      FDS                         : 4
 # Clock Buffers                    : 1
 #      BUFG                        : 1
-# IO Buffers                       : 52
-#      IBUF                        : 34
-#      OBUF                        : 18
+# IO Buffers                       : 57
+#      IBUF                        : 23
+#      OBUF                        : 34
 # MULTs                            : 1
 #      MULT18X18SIO                : 1
 =========================================================================
@@ -587,11 +610,11 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-5 
 
- Number of Slices:                      236  out of   8672     2%  
- Number of Slice Flip Flops:            130  out of  17344     0%  
- Number of 4 input LUTs:                395  out of  17344     2%  
- Number of IOs:                          52
- Number of bonded IOBs:                  52  out of    250    20%  
+ Number of Slices:                      198  out of   8672     2%  
+ Number of Slice Flip Flops:             75  out of  17344     0%  
+ Number of 4 input LUTs:                376  out of  17344     2%  
+ Number of IOs:                          59
+ Number of bonded IOBs:                  57  out of    250    22%  
  Number of MULT18X18SIOs:                 1  out of     28     3%  
  Number of GCLKs:                         1  out of     24     4%  
 
@@ -616,7 +639,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-CLK                                | IBUF+BUFG              | 130   |
+CLK                                | IBUF+BUFG              | 75    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -627,10 +650,10 @@ Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 27.670ns (Maximum Frequency: 36.140MHz)
-   Minimum input arrival time before clock: 19.316ns
-   Maximum output required time after clock: 14.229ns
-   Maximum combinational path delay: 19.709ns
+   Minimum period: 27.722ns (Maximum Frequency: 36.072MHz)
+   Minimum input arrival time before clock: 13.947ns
+   Maximum output required time after clock: 17.119ns
+   Maximum combinational path delay: 15.388ns
 
 Timing Detail:
 --------------
@@ -638,136 +661,129 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK'
-  Clock period: 27.670ns (frequency: 36.140MHz)
-  Total number of paths / destination ports: 150832 / 130
+  Clock period: 27.722ns (frequency: 36.072MHz)
+  Total number of paths / destination ports: 345946 / 130
 -------------------------------------------------------------------------
-Delay:               13.835ns (Levels of Logic = 10)
-  Source:            XLXI_2/reg_file_1_0 (FF)
-  Destination:       XLXI_1/z_flag (FF)
-  Source Clock:      CLK falling
-  Destination Clock: CLK rising
+Delay:               13.861ns (Levels of Logic = 9)
+  Source:            XLXI_45/data_14 (FF)
+  Destination:       XLXI_2/reg_file_3_15 (FF)
+  Source Clock:      CLK rising
+  Destination Clock: CLK falling
 
-  Data Path: XLXI_2/reg_file_1_0 to XLXI_1/z_flag
+  Data Path: XLXI_45/data_14 to XLXI_2/reg_file_3_15
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE_1:C->Q           2   0.514   0.410  XLXI_2/reg_file_1_0 (XLXI_2/reg_file_1_0)
-     LUT4:I2->O            1   0.612   0.000  XLXI_2/mux16_6 (XLXI_2/mux16_6)
-     MUXF5:I0->O           1   0.278   0.000  XLXI_2/mux16_4_f5 (XLXI_2/mux16_4_f5)
-     MUXF6:I0->O           4   0.451   0.529  XLXI_2/mux16_2_f6 (XLXN_97<0>)
-     LUT3:I2->O           13   0.612   0.836  XLXI_5/muxout<0>_1 (XLXI_5/muxout<0>)
-     MULT18X18SIO:B0->P13    1   4.228   0.387  XLXI_1/Mmult_calc_result_mult0001 (XLXI_1/calc_result_mult0001<13>)
-     LUT3:I2->O            1   0.612   0.000  XLXI_1/Mmux_calc_result_59 (XLXI_1/Mmux_calc_result_59)
-     MUXF5:I1->O           1   0.278   0.000  XLXI_1/Mmux_calc_result_4_f5_3 (XLXI_1/Mmux_calc_result_4_f54)
-     MUXF6:I0->O          10   0.451   0.902  XLXI_1/Mmux_calc_result_2_f6_3 (RESULT_13_OBUF)
-     LUT3:I0->O            1   0.612   0.360  XLXI_1/z_flag_not000117_SW0 (N147)
-     LUT4:I3->O            1   0.612   0.357  XLXI_1/z_flag_not000138 (XLXI_1/z_flag_not0001)
-     FDR:R                     0.795          XLXI_1/z_flag
+     FD:C->Q              14   0.514   1.002  XLXI_45/data_14 (XLXI_45/data_14)
+     LUT4_D:I0->O         12   0.612   0.820  XLXI_4/RegRead1_or00001_2 (XLXI_4/RegRead1_or000011)
+     LUT4:I3->O           32   0.612   1.103  XLXI_4/RegRead1<0>1 (XLXN_23<0>)
+     LUT3:I2->O            1   0.612   0.000  XLXI_2/mux6_51 (XLXI_2/mux6_51)
+     MUXF5:I1->O          13   0.278   0.836  XLXI_2/mux6_4_f5 (XLXI_2/mux6_4_f5)
+     MULT18X18SIO:A15->P15    1   4.297   0.387  XLXI_1/Mmult_calc_result_mult0001 (XLXI_1/calc_result_mult0001<15>)
+     LUT3:I2->O            1   0.612   0.000  XLXI_1/Mmux_calc_result_513 (XLXI_1/Mmux_calc_result_513)
+     MUXF5:I1->O           1   0.278   0.000  XLXI_1/Mmux_calc_result_4_f5_5 (XLXI_1/Mmux_calc_result_4_f56)
+     MUXF6:I0->O           4   0.451   0.568  XLXI_1/Mmux_calc_result_2_f6_5 (XLXN_259<15>)
+     LUT2:I1->O            4   0.612   0.000  XLXI_46/muxout1<15>1 (XLXN_260<15>)
+     FDRE_1:D                  0.268          XLXI_2/reg_file_2_15
     ----------------------------------------
-    Total                     13.835ns (10.055ns logic, 3.780ns route)
-                                       (72.7% logic, 27.3% route)
+    Total                     13.861ns (9.146ns logic, 4.715ns route)
+                                       (66.0% logic, 34.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
-  Total number of paths / destination ports: 1658694 / 386
+  Total number of paths / destination ports: 7818 / 144
 -------------------------------------------------------------------------
-Offset:              19.316ns (Levels of Logic = 14)
-  Source:            INSTR<12> (PAD)
+Offset:              13.947ns (Levels of Logic = 10)
+  Source:            EXT_IN<3> (PAD)
   Destination:       XLXI_1/z_flag (FF)
   Destination Clock: CLK rising
 
-  Data Path: INSTR<12> to XLXI_1/z_flag
+  Data Path: EXT_IN<3> to XLXI_1/z_flag
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     begin scope: 'XLXI_41'
-     IBUF:I->O             7   1.106   0.754  I_36_37 (O<12>)
-     end scope: 'XLXI_41'
-     LUT4:I0->O            4   0.612   0.651  XLXI_4/ALUMode<2>_SW1 (N265)
-     LUT4:I0->O           66   0.612   1.234  XLXI_4/RegRead2_or0000 (XLXI_4/RegRead2_or0000)
-     LUT2:I0->O           32   0.612   1.073  XLXI_4/RegRead2<1>1 (XLXN_24<1>)
-     MUXF5:S->O            1   0.641   0.000  XLXI_2/mux16_3_f5 (XLXI_2/mux16_3_f5)
-     MUXF6:I1->O           4   0.451   0.529  XLXI_2/mux16_2_f6 (XLXN_97<0>)
-     LUT3:I2->O           13   0.612   0.836  XLXI_5/muxout<0>_1 (XLXI_5/muxout<0>)
-     MULT18X18SIO:B0->P13    1   4.228   0.387  XLXI_1/Mmult_calc_result_mult0001 (XLXI_1/calc_result_mult0001<13>)
-     LUT3:I2->O            1   0.612   0.000  XLXI_1/Mmux_calc_result_59 (XLXI_1/Mmux_calc_result_59)
-     MUXF5:I1->O           1   0.278   0.000  XLXI_1/Mmux_calc_result_4_f5_3 (XLXI_1/Mmux_calc_result_4_f54)
-     MUXF6:I0->O          10   0.451   0.902  XLXI_1/Mmux_calc_result_2_f6_3 (RESULT_13_OBUF)
-     LUT3:I0->O            1   0.612   0.360  XLXI_1/z_flag_not000117_SW0 (N147)
+     begin scope: 'XLXI_42'
+     IBUF:I->O             2   1.106   0.532  I_36_42 (O<3>)
+     end scope: 'XLXI_42'
+     LUT4:I0->O            6   0.612   0.721  XLXI_5/muxout<3>_SW1 (N124)
+     LUT3:I0->O           38   0.612   1.074  XLXI_5/muxout<3> (XLXN_103<3>)
+     MULT18X18SIO:B3->P15    1   4.297   0.387  XLXI_1/Mmult_calc_result_mult0001 (XLXI_1/calc_result_mult0001<15>)
+     LUT3:I2->O            1   0.612   0.000  XLXI_1/Mmux_calc_result_513 (XLXI_1/Mmux_calc_result_513)
+     MUXF5:I1->O           1   0.278   0.000  XLXI_1/Mmux_calc_result_4_f5_5 (XLXI_1/Mmux_calc_result_4_f56)
+     MUXF6:I0->O           4   0.451   0.529  XLXI_1/Mmux_calc_result_2_f6_5 (XLXN_259<15>)
+     LUT3:I2->O            1   0.612   0.360  XLXI_1/z_flag_not000125 (XLXI_1/z_flag_not000125)
      LUT4:I3->O            1   0.612   0.357  XLXI_1/z_flag_not000138 (XLXI_1/z_flag_not0001)
      FDR:R                     0.795          XLXI_1/z_flag
     ----------------------------------------
-    Total                     19.316ns (12.234ns logic, 7.082ns route)
-                                       (63.3% logic, 36.7% route)
+    Total                     13.947ns (9.987ns logic, 3.960ns route)
+                                       (71.6% logic, 28.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
-  Total number of paths / destination ports: 16602 / 18
+  Total number of paths / destination ports: 67938 / 18
 -------------------------------------------------------------------------
-Offset:              14.229ns (Levels of Logic = 9)
-  Source:            XLXI_2/reg_file_1_0 (FF)
-  Destination:       RESULT<15> (PAD)
-  Source Clock:      CLK falling
+Offset:              17.119ns (Levels of Logic = 10)
+  Source:            XLXI_45/data_14 (FF)
+  Destination:       OUTPUT<15> (PAD)
+  Source Clock:      CLK rising
 
-  Data Path: XLXI_2/reg_file_1_0 to RESULT<15>
+  Data Path: XLXI_45/data_14 to OUTPUT<15>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE_1:C->Q           2   0.514   0.410  XLXI_2/reg_file_1_0 (XLXI_2/reg_file_1_0)
-     LUT4:I2->O            1   0.612   0.000  XLXI_2/mux16_6 (XLXI_2/mux16_6)
-     MUXF5:I0->O           1   0.278   0.000  XLXI_2/mux16_4_f5 (XLXI_2/mux16_4_f5)
-     MUXF6:I0->O           4   0.451   0.529  XLXI_2/mux16_2_f6 (XLXN_97<0>)
-     LUT3:I2->O           13   0.612   0.836  XLXI_5/muxout<0>_1 (XLXI_5/muxout<0>)
-     MULT18X18SIO:B0->P15    1   4.297   0.387  XLXI_1/Mmult_calc_result_mult0001 (XLXI_1/calc_result_mult0001<15>)
+     FD:C->Q              14   0.514   1.002  XLXI_45/data_14 (XLXI_45/data_14)
+     LUT4_D:I0->O         12   0.612   0.820  XLXI_4/RegRead1_or00001_2 (XLXI_4/RegRead1_or000011)
+     LUT4:I3->O           32   0.612   1.103  XLXI_4/RegRead1<0>1 (XLXN_23<0>)
+     LUT3:I2->O            1   0.612   0.000  XLXI_2/mux6_51 (XLXI_2/mux6_51)
+     MUXF5:I1->O          13   0.278   0.836  XLXI_2/mux6_4_f5 (XLXI_2/mux6_4_f5)
+     MULT18X18SIO:A15->P15    1   4.297   0.387  XLXI_1/Mmult_calc_result_mult0001 (XLXI_1/calc_result_mult0001<15>)
      LUT3:I2->O            1   0.612   0.000  XLXI_1/Mmux_calc_result_513 (XLXI_1/Mmux_calc_result_513)
      MUXF5:I1->O           1   0.278   0.000  XLXI_1/Mmux_calc_result_4_f5_5 (XLXI_1/Mmux_calc_result_4_f56)
-     MUXF6:I0->O          11   0.451   0.793  XLXI_1/Mmux_calc_result_2_f6_5 (RESULT_15_OBUF)
-     OBUF:I->O                 3.169          RESULT_15_OBUF (RESULT<15>)
+     MUXF6:I0->O           4   0.451   0.568  XLXI_1/Mmux_calc_result_2_f6_5 (XLXN_259<15>)
+     LUT2:I1->O            1   0.612   0.357  XLXI_46/muxout3<15>1 (OUTPUT_15_OBUF)
+     OBUF:I->O                 3.169          OUTPUT_15_OBUF (OUTPUT<15>)
     ----------------------------------------
-    Total                     14.229ns (11.274ns logic, 2.955ns route)
-                                       (79.2% logic, 20.8% route)
+    Total                     17.119ns (12.047ns logic, 5.072ns route)
+                                       (70.4% logic, 29.6% route)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 182370 / 16
+  Total number of paths / destination ports: 1514 / 16
 -------------------------------------------------------------------------
-Delay:               19.709ns (Levels of Logic = 13)
-  Source:            INSTR<12> (PAD)
-  Destination:       RESULT<15> (PAD)
+Delay:               15.388ns (Levels of Logic = 10)
+  Source:            EXT_IN<3> (PAD)
+  Destination:       OUTPUT<15> (PAD)
 
-  Data Path: INSTR<12> to RESULT<15>
+  Data Path: EXT_IN<3> to OUTPUT<15>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     begin scope: 'XLXI_41'
-     IBUF:I->O             7   1.106   0.754  I_36_37 (O<12>)
-     end scope: 'XLXI_41'
-     LUT4:I0->O            4   0.612   0.651  XLXI_4/ALUMode<2>_SW1 (N265)
-     LUT4:I0->O           66   0.612   1.234  XLXI_4/RegRead2_or0000 (XLXI_4/RegRead2_or0000)
-     LUT2:I0->O           32   0.612   1.073  XLXI_4/RegRead2<1>1 (XLXN_24<1>)
-     MUXF5:S->O            1   0.641   0.000  XLXI_2/mux16_3_f5 (XLXI_2/mux16_3_f5)
-     MUXF6:I1->O           4   0.451   0.529  XLXI_2/mux16_2_f6 (XLXN_97<0>)
-     LUT3:I2->O           13   0.612   0.836  XLXI_5/muxout<0>_1 (XLXI_5/muxout<0>)
-     MULT18X18SIO:B0->P15    1   4.297   0.387  XLXI_1/Mmult_calc_result_mult0001 (XLXI_1/calc_result_mult0001<15>)
+     begin scope: 'XLXI_42'
+     IBUF:I->O             2   1.106   0.532  I_36_42 (O<3>)
+     end scope: 'XLXI_42'
+     LUT4:I0->O            6   0.612   0.721  XLXI_5/muxout<3>_SW1 (N124)
+     LUT3:I0->O           38   0.612   1.074  XLXI_5/muxout<3> (XLXN_103<3>)
+     MULT18X18SIO:B3->P15    1   4.297   0.387  XLXI_1/Mmult_calc_result_mult0001 (XLXI_1/calc_result_mult0001<15>)
      LUT3:I2->O            1   0.612   0.000  XLXI_1/Mmux_calc_result_513 (XLXI_1/Mmux_calc_result_513)
      MUXF5:I1->O           1   0.278   0.000  XLXI_1/Mmux_calc_result_4_f5_5 (XLXI_1/Mmux_calc_result_4_f56)
-     MUXF6:I0->O          11   0.451   0.793  XLXI_1/Mmux_calc_result_2_f6_5 (RESULT_15_OBUF)
-     OBUF:I->O                 3.169          RESULT_15_OBUF (RESULT<15>)
+     MUXF6:I0->O           4   0.451   0.568  XLXI_1/Mmux_calc_result_2_f6_5 (XLXN_259<15>)
+     LUT2:I1->O            1   0.612   0.357  XLXI_46/muxout3<15>1 (OUTPUT_15_OBUF)
+     OBUF:I->O                 3.169          OUTPUT_15_OBUF (OUTPUT<15>)
     ----------------------------------------
-    Total                     19.709ns (13.453ns logic, 6.256ns route)
-                                       (68.3% logic, 31.7% route)
+    Total                     15.388ns (11.749ns logic, 3.639ns route)
+                                       (76.4% logic, 23.6% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 9.64 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 8.11 secs
  
 --> 
 
-Total memory usage is 311060 kilobytes
+Total memory usage is 324160 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   62 (   0 filtered)
-Number of infos    :    1 (   0 filtered)
+Number of warnings :  134 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
 

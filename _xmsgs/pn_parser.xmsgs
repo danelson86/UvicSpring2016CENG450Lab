@@ -8,35 +8,5 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab-/ALU.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab-/branch_handler.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab-/control.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab-/demo_rom.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab-/demux_3to1_16bit.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab-/instruction_register.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab-/memory.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab-/mux_2to1_16bit.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab-/mux_3to1_16bit.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab-/program_counter.vhd&quot; into library work</arg>
-</msg>
-
 </messages>
 

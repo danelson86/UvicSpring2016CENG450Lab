@@ -1,0 +1,1 @@
+sch2sym -intstyle ise -family spartan3e -refsym ram_14x16 {C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/ram_14x16.sch} {C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/ram_14x16.sym} 
