@@ -9,26 +9,43 @@ entity control is
            CLK : in  STD_LOGIC;
            RST : in  STD_LOGIC;
 			  
-			  --Outputs to fegister file control signals
-           RegRead1 : out  STD_LOGIC_VECTOR (2 downto 0);
-           RegRead2 : out  STD_LOGIC_VECTOR (2 downto 0);
-           RegWrite : out  STD_LOGIC_VECTOR (2 downto 0);
-           RegWriteEn : out  STD_LOGIC;
-			  
-			  --Outputs to ALU control signals
+			  --Register Writeback data
+			  RegWriteData : in STD_LOGIC_VECTOR (15 downto 0);
+			  RegReadData1 : out STD_LOGIC_VECTOR (15 downto 0);
+			  RegReadData2 : out STD_LOGIC_VECTOR (15 downto 0);
            ALUMode : out  STD_LOGIC_VECTOR (2 downto 0);
-			  
-			  --Outputs to RegRead2 MUX
 			  ImmData : out  STD_LOGIC_VECTOR (15 downto 0);
 			  ALUIN2Src : out  STD_LOGIC_VECTOR (1 downto 0);
-			  
-			  
 			  ALU_Dest : out STD_LOGIC_VECTOR (1 downto 0)
 			  
 			  );
 end control;
 
 architecture Behavioral of control is
+
+
+	component register_file is
+		port(	rst : in std_logic;
+			clk : in std_logic;
+			--read signals
+			rd_index1: in std_logic_vector(2 downto 0);
+			rd_data1: out std_logic_vector(15 downto 0);
+			rd_index2: in std_logic_vector(2 downto 0);
+			rd_data2: out std_logic_vector(15 downto 0);
+			--write signals
+			wr_index: in std_logic_vector(2 downto 0);
+			wr_data: in std_logic_vector(15 downto 0);
+			wr_enable: in std_logic);
+	end component;
+	
+	-- Signals for Register File
+	signal rd_index1 : std_logic_vector(2 downto 0);
+	signal rd_data1 : std_logic_vector(15 downto 0);
+	signal rd_index2 : std_logic_vector(2 downto 0);
+	signal rd_data2 : std_logic_vector(15 downto 0);
+	signal wr_index : std_logic_vector(2 downto 0);
+	signal wr_data : std_logic_vector(15 downto 0);
+	signal wr_enable : std_logic;
 	
 	--Common fields and Format-A fields
 	signal opcode :  STD_LOGIC_VECTOR (6 downto 0);
@@ -48,6 +65,14 @@ architecture Behavioral of control is
 	
 begin
 
+	wr_data <= RegWriteData;
+	RegReadData1 <= rd_data1;
+	RegReadData2 <= rd_data2;
+
+	MAIN_REGS : register_file port map (clk, rst, rd_index1, rd_data1 , rd_index2 , rd_data2 , wr_index , wr_data , wr_enable);
+	--Wire Register into control unit
+
+
 	--Break up the entire instruction into potential fields 
 	opcode <= INSTR(15 downto 9);
 	ra <= INSTR(8 downto 6);
@@ -59,26 +84,15 @@ begin
 	imm <= INSTR(7 downto 0);
 	m1 <= INSTR(8);
 	
---	generate_zflags:process(clk)
---	begin
---		if(clk = '1' and clk'event) then
---			case calc_result (15 downto 0) is
---				when X"0000" => z_flag <= '1';
---				when others => z_flag <= '0';
---			end case;
---		end if;
---	end process;
 
-		
+			
 	--Sets the RegRead1 control signal
 	process(INSTR, OPCODE, RA, RB)
 	begin
 		case OPCODE is
-		
-		when "0000001" | "0000010" | "0000011" | "0000100" => RegRead1 <= rb;
-		when "0000101" | "0000110" | "0000111" | "0100000" => RegRead1 <= ra;
-		when others => RegRead1 <= "000";
-		
+			when "0000001" | "0000010" | "0000011" | "0000100" => rd_index1 <= rb;
+			when "0000101" | "0000110" | "0000111" | "0100000" => rd_index1 <= ra;
+			when others => rd_index1 <= "000";
 		end case; 
 	end process;
 
@@ -88,8 +102,8 @@ begin
 	begin
 		case OPCODE is
 			--Opcodes 1,2,3,4 (format As)
-			when "0000001" | "0000010" | "0000011" | "0000100" => RegRead2 <= rc;
-			when others => RegRead2 <= "000";
+			when "0000001" | "0000010" | "0000011" | "0000100" => rd_index2 <= rc;
+			when others => rd_index2 <= "000";
 		end case;
 	end process;
 		
@@ -98,25 +112,25 @@ begin
 	begin
 		case OPCODE is
 			--Opcodes 1,2,3,4,5,6,33 (format As)
-			when  "0000001" | "0000010" | "0000011" | "0000100" | "0000101" | "0000110" | "0100001" => RegWrite <= ra;
-			when others => RegWrite <= "000";
+			when  "0000001" | "0000010" | "0000011" | "0000100" | "0000101" | "0000110" | "0100001" => wr_index <= ra;
+			when others => wr_index <= "000";
 		end case;
 	end process;
+
 	
-	
-		--Sets the RegWriteEn control signals
+	--Sets the RegWriteEn control signals
 	process(INSTR, OPCODE)
 	begin
 		--Opcodes 1,2,3,4,5,6,33 (format As)
 		case OPCODE is
-			when "0000001" | "0000010" | "0000011" | "0000100" | "0000101" | "0000110" | "0100001" => RegWriteEn <= '1';
-			when others => RegWriteEn <= '0';
+			when "0000001" | "0000010" | "0000011" | "0000100" | "0000101" | "0000110" | "0100001" => wr_enable <= '1';
+			when others => wr_enable <= '0';
 		end case;
 	end process;
 		
 	--Outputs Immediate Data
 	process(INSTR, OPCODE, C1)
-	begin
+	begin 
 		case OPCODE is
 			--Opcodes 5,6 (format As) Zero extend c1 to 16 bits
 			when "0000101" | "0000110" => ImmData <= std_logic_vector(resize(unsigned(c1), 16));
@@ -177,23 +191,17 @@ begin
 		end case;
 	end process;
 	
-	
 	-- TODO complete all instructions 
 	ALU_DEST_CTRL:process(INSTR, OPCODE)
 	begin
 		case OPCODE is
-		
 			when  "0100000"  =>  ALU_DEST <= "10";
-			
-			--Fill load instructions
-			when  "0010001"  =>  ALU_DEST <= "01";
-					 
+			when  "0010001"  =>  ALU_DEST <= "01";	 
 			when others => ALU_DEST <= "00";
-			
 		end case; 
-	
 	end process;
 	
 
+	
 end Behavioral;
 

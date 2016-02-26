@@ -7,7 +7,7 @@
 // \   \   \/     Version : 14.7
 //  \   \         Application : sch2hdl
 //  /   /         Filename : cpu.vf
-// /___/   /\     Timestamp : 02/26/2016 12:23:31
+// /___/   /\     Timestamp : 02/26/2016 15:01:49
 // \   \  /  \ 
 //  \___\/\___\ 
 //
@@ -101,9 +101,7 @@ module cpu(BA,
            RST, 
            INSTR, 
            MEM_DATA, 
-           N_FLAG, 
-           OUTPUT, 
-           Z_FLAG);
+           OUTPUT);
 
     input [6:0] BA;
     input BT;
@@ -112,81 +110,60 @@ module cpu(BA,
     input RST;
    output [15:0] INSTR;
    output [15:0] MEM_DATA;
-   output N_FLAG;
    output [15:0] OUTPUT;
-   output Z_FLAG;
    
-   wire XLXN_8;
-   wire [15:0] XLXN_13;
-   wire [2:0] XLXN_23;
-   wire [2:0] XLXN_24;
-   wire [2:0] XLXN_48;
-   wire [2:0] XLXN_49;
-   wire [15:0] XLXN_87;
-   wire [15:0] XLXN_97;
-   wire [15:0] XLXN_103;
-   wire [1:0] XLXN_104;
-   wire [15:0] XLXN_207;
-   wire [15:0] XLXN_259;
-   wire [15:0] XLXN_260;
-   wire [1:0] XLXN_264;
-   wire XLXN_275;
-   wire XLXN_327;
+   wire XLXN_360;
+   wire [15:0] XLXN_393;
+   wire [15:0] XLXN_394;
+   wire [15:0] XLXN_397;
+   wire [15:0] XLXN_400;
+   wire [15:0] XLXN_401;
+   wire [2:0] XLXN_405;
+   wire [1:0] XLXN_406;
+   wire [15:0] XLXN_418;
+   wire XLXN_424;
+   wire [1:0] XLXN_429;
    wire [15:0] INSTR_DUMMY;
    
    assign INSTR[15:0] = INSTR_DUMMY[15:0];
-   ALU  XLXI_1 (.alu_mode(XLXN_49[2:0]), 
-               .clk(XLXN_327), 
-               .in1(XLXN_87[15:0]), 
-               .in2(XLXN_103[15:0]), 
-               .rst(XLXN_275), 
-               .n_flag(N_FLAG), 
-               .result(XLXN_259[15:0]), 
-               .z_flag(Z_FLAG));
-   register_file  XLXI_2 (.clk(XLXN_327), 
-                         .rd_index1(XLXN_23[2:0]), 
-                         .rd_index2(XLXN_24[2:0]), 
-                         .rst(XLXN_275), 
-                         .wr_data(XLXN_260[15:0]), 
-                         .wr_enable(XLXN_8), 
-                         .wr_index(XLXN_48[2:0]), 
-                         .rd_data1(XLXN_87[15:0]), 
-                         .rd_data2(XLXN_97[15:0]));
-   control  XLXI_4 (.CLK(XLXN_327), 
-                   .INSTR(INSTR_DUMMY[15:0]), 
-                   .RST(XLXN_275), 
-                   .ALUIN2Src(XLXN_104[1:0]), 
-                   .ALUMode(XLXN_49[2:0]), 
-                   .ALU_Dest(XLXN_264[1:0]), 
-                   .ImmData(XLXN_13[15:0]), 
-                   .RegRead1(XLXN_23[2:0]), 
-                   .RegRead2(XLXN_24[2:0]), 
-                   .RegWrite(XLXN_48[2:0]), 
-                   .RegWriteEn(XLXN_8));
-   mux_3to1_16bit  XLXI_5 (.in1(XLXN_97[15:0]), 
-                          .in2(XLXN_13[15:0]), 
-                          .in3(XLXN_207[15:0]), 
-                          .sel(XLXN_104[1:0]), 
-                          .muxout(XLXN_103[15:0]));
    (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
          IFD_DELAY_VALUE = "AUTO" *) 
    IBUF  XLXI_29 (.I(CLK), 
-                 .O(XLXN_327));
+                 .O(XLXN_424));
    (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
          IFD_DELAY_VALUE = "AUTO" *) 
    IBUF  XLXI_30 (.I(RST), 
-                 .O(XLXN_275));
+                 .O(XLXN_360));
    (* HU_SET = "XLXI_42_0" *) 
    IBUF16_MXILINX_cpu  XLXI_42 (.I(EXT_IN[15:0]), 
-                               .O(XLXN_207[15:0]));
-   demux_3to1_16bit  XLXI_46 (.muxin(XLXN_259[15:0]), 
-                             .sel(XLXN_264[1:0]), 
-                             .muxout1(XLXN_260[15:0]), 
+                               .O(XLXN_418[15:0]));
+   demux_3to1_16bit  XLXI_46 (.muxin(XLXN_393[15:0]), 
+                             .sel(XLXN_429[1:0]), 
+                             .muxout1(XLXN_394[15:0]), 
                              .muxout2(MEM_DATA[15:0]), 
                              .muxout3(OUTPUT[15:0]));
    instruction_fetch  XLXI_53 (.BranchAddr(BA[6:0]), 
-                              .CLK(XLXN_327), 
+                              .CLK(XLXN_424), 
                               .IsBranchTaken(BT), 
-                              .RST(XLXN_275), 
+                              .RST(XLXN_360), 
                               .Istr_out(INSTR_DUMMY[15:0]));
+   control  XLXI_55 (.CLK(XLXN_424), 
+                    .INSTR(INSTR_DUMMY[15:0]), 
+                    .RegWriteData(XLXN_394[15:0]), 
+                    .RST(XLXN_424), 
+                    .ALUIN2Src(XLXN_406[1:0]), 
+                    .ALUMode(XLXN_405[2:0]), 
+                    .ALU_Dest(XLXN_429[1:0]), 
+                    .ImmData(XLXN_401[15:0]), 
+                    .RegReadData1(XLXN_397[15:0]), 
+                    .RegReadData2(XLXN_400[15:0]));
+   execute_instruction  XLXI_56 (.alu_input2_sel(XLXN_406[1:0]), 
+                                .alu_mode_in(XLXN_405[2:0]), 
+                                .clk(XLXN_424), 
+                                .extern_data_in(XLXN_418[15:0]), 
+                                .imm_data_in(XLXN_401[15:0]), 
+                                .ra_in(XLXN_397[15:0]), 
+                                .rb_in(XLXN_400[15:0]), 
+                                .rst(XLXN_360), 
+                                .result(XLXN_393[15:0]));
 endmodule
