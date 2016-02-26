@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -o "C:/Users/OWner/Documents/CENG 450/lab/alu_test_isim_beh.exe" -prj "C:/Users/OWner/Documents/CENG 450/lab/alu_test_beh.prj" "work.alu_test" 
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/cpu_tb_isim_beh.exe" -prj "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/cpu_tb_beh.prj" "work.cpu_tb" "work.glbl" 

@@ -7,11 +7,11 @@
 // \   \   \/     Version : 14.7
 //  \   \         Application : sch2hdl
 //  /   /         Filename : cpu.vf
-// /___/   /\     Timestamp : 02/22/2016 19:45:50
+// /___/   /\     Timestamp : 02/25/2016 16:18:30
 // \   \  /  \ 
 //  \___\/\___\ 
 //
-//Command: sch2hdl -intstyle ise -family spartan3e -verilog "C:/Users/OWner/Documents/CENG 450/lab/cpu.vf" -w "C:/Users/OWner/Documents/CENG 450/lab/cpu.sch"
+//Command: sch2hdl -intstyle ise -family spartan3e -verilog "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/cpu.vf" -w "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/cpu.sch"
 //Design Name: cpu
 //Device: spartan3e
 //Purpose:
@@ -94,20 +94,22 @@ module IBUF16_MXILINX_cpu(I,
 endmodule
 `timescale 1ns / 1ps
 
-module cpu(CLK, 
+module cpu(ADDR, 
+           CLK, 
            EXT_IN, 
-           INSTR, 
            RST, 
+           MEM_DATA, 
            N_FLAG, 
-           RESULT, 
+           OUTPUT, 
            Z_FLAG);
 
+    input [6:0] ADDR;
     input CLK;
     input [15:0] EXT_IN;
-    input [15:0] INSTR;
     input RST;
+   output [15:0] MEM_DATA;
    output N_FLAG;
-   output [15:0] RESULT;
+   output [15:0] OUTPUT;
    output Z_FLAG;
    
    wire XLXN_8;
@@ -122,33 +124,35 @@ module cpu(CLK,
    wire [1:0] XLXN_104;
    wire [15:0] XLXN_206;
    wire [15:0] XLXN_207;
-   wire XLXN_215;
-   wire XLXN_216;
-   wire [15:0] RESULT_DUMMY;
+   wire XLXN_256;
+   wire XLXN_257;
+   wire [15:0] XLXN_259;
+   wire [15:0] XLXN_260;
+   wire [1:0] XLXN_264;
    
-   assign RESULT[15:0] = RESULT_DUMMY[15:0];
    ALU  XLXI_1 (.alu_mode(XLXN_49[2:0]), 
-               .clk(XLXN_215), 
+               .clk(XLXN_257), 
                .in1(XLXN_87[15:0]), 
                .in2(XLXN_103[15:0]), 
-               .rst(XLXN_216), 
+               .rst(XLXN_256), 
                .n_flag(N_FLAG), 
-               .result(RESULT_DUMMY[15:0]), 
+               .result(XLXN_259[15:0]), 
                .z_flag(Z_FLAG));
-   register_file  XLXI_2 (.clk(XLXN_215), 
+   register_file  XLXI_2 (.clk(XLXN_257), 
                          .rd_index1(XLXN_23[2:0]), 
                          .rd_index2(XLXN_24[2:0]), 
-                         .rst(XLXN_216), 
-                         .wr_data(RESULT_DUMMY[15:0]), 
+                         .rst(XLXN_256), 
+                         .wr_data(XLXN_260[15:0]), 
                          .wr_enable(XLXN_8), 
                          .wr_index(XLXN_48[2:0]), 
                          .rd_data1(XLXN_87[15:0]), 
                          .rd_data2(XLXN_97[15:0]));
-   control  XLXI_4 (.CLK(XLXN_215), 
+   control  XLXI_4 (.CLK(XLXN_257), 
                    .INSTR(XLXN_206[15:0]), 
-                   .RST(XLXN_216), 
+                   .RST(XLXN_256), 
                    .ALUIN2Src(XLXN_104[1:0]), 
                    .ALUMode(XLXN_49[2:0]), 
+                   .ALU_Dest(XLXN_264[1:0]), 
                    .ImmData(XLXN_13[15:0]), 
                    .RegRead1(XLXN_23[2:0]), 
                    .RegRead2(XLXN_24[2:0]), 
@@ -162,15 +166,20 @@ module cpu(CLK,
    (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
          IFD_DELAY_VALUE = "AUTO" *) 
    IBUF  XLXI_29 (.I(CLK), 
-                 .O(XLXN_215));
+                 .O(XLXN_257));
    (* IOSTANDARD = "DEFAULT" *) (* IBUF_DELAY_VALUE = "0" *) (* 
          IFD_DELAY_VALUE = "AUTO" *) 
    IBUF  XLXI_30 (.I(RST), 
-                 .O(XLXN_216));
-   (* HU_SET = "XLXI_41_0" *) 
-   IBUF16_MXILINX_cpu  XLXI_41 (.I(INSTR[15:0]), 
-                               .O(XLXN_206[15:0]));
-   (* HU_SET = "XLXI_42_1" *) 
+                 .O(XLXN_256));
+   (* HU_SET = "XLXI_42_0" *) 
    IBUF16_MXILINX_cpu  XLXI_42 (.I(EXT_IN[15:0]), 
                                .O(XLXN_207[15:0]));
+   ROM_VHDL  XLXI_45 (.addr(ADDR[6:0]), 
+                     .clk(XLXN_257), 
+                     .data(XLXN_206[15:0]));
+   demux_3to1_16bit  XLXI_46 (.muxin(XLXN_259[15:0]), 
+                             .sel(XLXN_264[1:0]), 
+                             .muxout1(XLXN_260[15:0]), 
+                             .muxout2(MEM_DATA[15:0]), 
+                             .muxout3(OUTPUT[15:0]));
 endmodule

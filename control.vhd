@@ -20,7 +20,11 @@ entity control is
 			  
 			  --Outputs to RegRead2 MUX
 			  ImmData : out  STD_LOGIC_VECTOR (15 downto 0);
-			  ALUIN2Src : out  STD_LOGIC_VECTOR (1 downto 0)
+			  ALUIN2Src : out  STD_LOGIC_VECTOR (1 downto 0);
+			  
+			  
+			  ALU_Dest : out STD_LOGIC_VECTOR (1 downto 0)
+			  
 			  );
 end control;
 
@@ -55,84 +59,113 @@ begin
 	imm <= INSTR(7 downto 0);
 	m1 <= INSTR(8);
 	
-	
-	--TODO: Convert these if-else statements into case statements?
-	
+--	generate_zflags:process(clk)
+--	begin
+--		if(clk = '1' and clk'event) then
+--			case calc_result (15 downto 0) is
+--				when X"0000" => z_flag <= '1';
+--				when others => z_flag <= '0';
+--			end case;
+--		end if;
+--	end process;
+
+		
 	--Sets the RegRead1 control signal
 	process(INSTR, OPCODE, RA, RB)
 	begin
-		--Opcodes 1,2,3,4,5,6,32 (format A1)
-		if(OPCODE = "0000001" or OPCODE = "0000010" or OPCODE = "0000011" or OPCODE = "0000100") then
-			RegRead1 <= rb;
-		--Opcodes 5,6,7,32 (format A2 and A3)
-		elsif(OPCODE = "0000101" or OPCODE = "0000110" or OPCODE = "0000111" or OPCODE = "0100000") then
-			RegRead1 <= ra;
-		else
-			RegRead1 <= "000";
-		end if;
+		case OPCODE is
+		
+		when "0000001" | "0000010" | "0000011" | "0000100" => RegRead1 <= rb;
+		when "0000101" | "0000110" | "0000111" | "0100000" => RegRead1 <= ra;
+		when others => RegRead1 <= "000";
+		
+		end case; 
 	end process;
-	
+
+
 	--Sets the RegRead2 control signal
 	process(INSTR, OPCODE, RC)
 	begin
-		--Opcodes 1,2,3,4 (format As)
-		if(OPCODE = "0000001" or OPCODE = "0000010" or OPCODE = "0000011" or OPCODE = "0000100") then
-			RegRead2 <= rc;
-		else
-			RegRead2 <= "000";
-		end if;
+		case OPCODE is
+			--Opcodes 1,2,3,4 (format As)
+			when "0000001" | "0000010" | "0000011" | "0000100" => RegRead2 <= rc;
+			when others => RegRead2 <= "000";
+		end case;
 	end process;
-	
-	--Sets the RegWrite control signals
+		
+		--Sets the RegWrite control signals
 	process(INSTR, OPCODE, RA)
 	begin
-		--Opcodes 1,2,3,4,5,6,33 (format As)
-		if(OPCODE = "0000001" or OPCODE = "0000010" or OPCODE = "0000011" or OPCODE = "0000100" 
-			or OPCODE = "0000101" or OPCODE = "0000110" or OPCODE = "0100001") then
-			RegWrite <= ra;
-		else
-			RegWrite <= "000";
-		end if;
+		case OPCODE is
+			--Opcodes 1,2,3,4,5,6,33 (format As)
+			when  "0000001" | "0000010" | "0000011" | "0000100" | "0000101" | "0000110" | "0100001" => RegWrite <= ra;
+			when others => RegWrite <= "000";
+		end case;
 	end process;
 	
-	--Sets the RegWriteEn control signals
+	
+		--Sets the RegWriteEn control signals
 	process(INSTR, OPCODE)
 	begin
 		--Opcodes 1,2,3,4,5,6,33 (format As)
-		if(OPCODE = "0000001" or OPCODE = "0000010" or OPCODE = "0000011" or OPCODE = "0000100" 
-			or OPCODE = "0000101" or OPCODE = "0000110" or OPCODE = "0100001") then
-			RegWriteEn <= '1';
-		else
-			RegWriteEn <= '0';
-		end if;
+		case OPCODE is
+			when "0000001" | "0000010" | "0000011" | "0000100" | "0000101" | "0000110" | "0100001" => RegWriteEn <= '1';
+			when others => RegWriteEn <= '0';
+		end case;
 	end process;
-	
+		
 	--Outputs Immediate Data
 	process(INSTR, OPCODE, C1)
 	begin
-		--Opcodes 5,6 (format As)
-		if(OPCODE = "0000101" or OPCODE = "0000110") then
-			--Zero extend c1 to 16 bits
-			ImmData <= std_logic_vector(resize(unsigned(c1), 16));
-		else
-			ImmData <= X"0000";
-		end if;
+		case OPCODE is
+			--Opcodes 5,6 (format As) Zero extend c1 to 16 bits
+			when "0000101" | "0000110" => ImmData <= std_logic_vector(resize(unsigned(c1), 16));
+			when others => ImmData <= X"0000";
+		end case;
 	end process;
 	
 	--Sets Reg2Src when immediate or external data is used
 	process(INSTR, OPCODE)
 	begin
-		--Use immediate data for Opcodes 5,6 (format As)
-		if(OPCODE = "0000101" or OPCODE = "0000110") then
-			ALUIN2Src <= "01";
-		--Use external data for Opcodes 33 (format As)
-		elsif(OPCODE = "0100001") then
-			ALUIN2Src <= "10";
-		--Use data from register port 2
-		else
-			ALUIN2Src <= "00";
-		end if;
+		case OPCODE is 
+			--Use immediate data for Opcodes 5,6 (format As)
+			when "0000101" | "0000110" => ALUIN2Src <= "01";
+			--Use external data for Opcodes 33 (format As)
+			when "0100001" => ALUIN2Src <= "10";
+			when others => ALUIN2Src <= "00";
+		end case;
 	end process;
+	
+--	 Handle B instruction decode
+--	process(INSTR, OPCODE, PC)
+--	begin
+--		case OPCODE is
+--			 Branch Relative 
+--			when "1000000" | "1000001" | "1000010" 
+--			 Branch Absolute
+--			when "1000011" | "1000100" | "1000101" | "1000110"
+--			 Return
+--			when "100000"
+--			when others ;;
+--		end case;
+--	end process;
+
+--	--Handle L-Format Instructions
+--	process(INSTR, OPCODE)
+--	begin 
+--
+--		case opcode is
+--			--Load
+--			when "0010000"
+--			--Store
+--			when "0010001"
+--			-- LOADIMM
+--			when "0010010"
+--			--MOV
+--			when "0010011"
+--		when others 
+--	
+--	end process;
 	
 	--Sets ALU OPCODE
 	process(INSTR, OPCODE)
@@ -155,6 +188,23 @@ begin
 			--NOP, TEST, OUT use IN1 Passthrough
 			when others  => ALUMode <= "000";
 		end case;
+	end process;
+	
+	
+	-- TODO complete all instructions 
+	ALU_DEST_CTRL:process(INSTR, OPCODE)
+	begin
+		case OPCODE is
+		
+			when  "0100000"  =>  ALU_DEST <= "10";
+			
+			--Fill load instructions
+			when  "0010001"  =>  ALU_DEST <= "01";
+					 
+			when others => ALU_DEST <= "00";
+			
+		end case; 
+	
 	end process;
 	
 

@@ -10,4 +10,5 @@ RegWriteEn
 =ALUMode[2:0]=
 =ImmData[15:0]=
 =ALUIN2Src[1:0]=
+=ALU_Dest[1:0]=
 [BiDir]

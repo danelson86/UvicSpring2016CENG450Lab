@@ -1,12 +1,16 @@
 AR busmux_16bit behavioral "C:/Users/OWner/Documents/CENG 450/lab/busmux_16bit.vhd" sub00/vhpl05 1456135816
-MO IBUF16_MXILINX_cpu NULL cpu.vf vlg78/_i_b_u_f16___m_x_i_l_i_n_x__cpu.bin 1456199153
-AR mux_3to1_16bit behavioral "C:/Users/OWner/Documents/CENG 450/lab/mux_3to1_16bit.vhd" sub00/vhpl09 1456199158
-MO cpu NULL cpu.vf vlg50/cpu.bin 1456199153
-AR register_file behavioural "C:/Users/OWner/Documents/CENG 450/lab/register.vhd" sub00/vhpl07 1456199160
+MO IBUF16_MXILINX_cpu NULL cpu.vf vlg78/_i_b_u_f16___m_x_i_l_i_n_x__cpu.bin 1456277628
+AR mux_3to1_16bit behavioral "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/mux_3to1_16bit.vhd" sub00/vhpl09 1456277633
+MO cpu NULL cpu.vf vlg50/cpu.bin 1456277628
+AR instruction_register behavioral "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/instruction_register.vhd" sub00/vhpl13 1456344227
+EN instruction_register NULL "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/instruction_register.vhd" sub00/vhpl12 1456344226
+AR register_file behavioural "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/register.vhd" sub00/vhpl07 1456277635
 EN busmux_16bit NULL "C:/Users/OWner/Documents/CENG 450/lab/busmux_16bit.vhd" sub00/vhpl04 1456135815
-EN register_file NULL "C:/Users/OWner/Documents/CENG 450/lab/register.vhd" sub00/vhpl06 1456199159
-EN control NULL "C:/Users/OWner/Documents/CENG 450/lab/control.vhd" sub00/vhpl00 1456199155
-EN mux_3to1_16bit NULL "C:/Users/OWner/Documents/CENG 450/lab/mux_3to1_16bit.vhd" sub00/vhpl08 1456199157
-AR alu behavioral "C:/Users/OWner/Documents/CENG 450/lab/ALU.vhd" sub00/vhpl03 1456199154
-AR control behavioral "C:/Users/OWner/Documents/CENG 450/lab/control.vhd" sub00/vhpl01 1456199156
-EN alu NULL "C:/Users/OWner/Documents/CENG 450/lab/ALU.vhd" sub00/vhpl02 1456199153
+EN register_file NULL "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/register.vhd" sub00/vhpl06 1456277634
+AR branch_handler behavioral "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/branch_handler.vhd" sub00/vhpl11 1456312381
+EN control NULL "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/control.vhd" sub00/vhpl00 1456277630
+EN mux_3to1_16bit NULL "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/mux_3to1_16bit.vhd" sub00/vhpl08 1456277632
+AR alu behavioral "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/ALU.vhd" sub00/vhpl03 1456277629
+EN branch_handler NULL "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/branch_handler.vhd" sub00/vhpl10 1456312380
+AR control behavioral "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/control.vhd" sub00/vhpl01 1456277631
+EN alu NULL "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/ALU.vhd" sub00/vhpl02 1456277628

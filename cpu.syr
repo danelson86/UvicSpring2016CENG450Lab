@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.26 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.27 secs
  
 --> Reading design: cpu.prj
 
@@ -104,13 +104,14 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "C:/Users/OWner/Documents/CENG 450/lab/ALU.vhd" in Library work.
+Compiling vhdl file "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/ALU.vhd" in Library work.
 Architecture behavioral of Entity alu is up to date.
-Compiling vhdl file "C:/Users/OWner/Documents/CENG 450/lab/control.vhd" in Library work.
-Architecture behavioral of Entity control is up to date.
-Compiling vhdl file "C:/Users/OWner/Documents/CENG 450/lab/mux_3to1_16bit.vhd" in Library work.
+Compiling vhdl file "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/control.vhd" in Library work.
+Entity <control> compiled.
+Entity <control> (Architecture <behavioral>) compiled.
+Compiling vhdl file "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/mux_3to1_16bit.vhd" in Library work.
 Architecture behavioral of Entity mux_3to1_16bit is up to date.
-Compiling vhdl file "C:/Users/OWner/Documents/CENG 450/lab/register.vhd" in Library work.
+Compiling vhdl file "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/register.vhd" in Library work.
 Architecture behavioural of Entity register_file is up to date.
 Compiling verilog file "cpu.vf" in library work
 Module <IBUF16_MXILINX_cpu> compiled
@@ -395,9 +396,9 @@ Module <IBUF16_MXILINX_cpu.2> is correct for synthesis.
 Performing bidirectional port resolution...
 
 Synthesizing Unit <alu>.
-    Related source file is "C:/Users/OWner/Documents/CENG 450/lab/ALU.vhd".
+    Related source file is "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/ALU.vhd".
 WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:643 - "C:/Users/OWner/Documents/CENG 450/lab/ALU.vhd" line 29: The result of a 16x16-bit multiplication is partially used. Only the 16 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/ALU.vhd" line 29: The result of a 16x16-bit multiplication is partially used. Only the 16 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
     Found 1-bit register for signal <z_flag>.
     Found 1-bit register for signal <n_flag>.
     Found 16-bit 8-to-1 multiplexer for signal <calc_result>.
@@ -415,7 +416,7 @@ Unit <alu> synthesized.
 
 
 Synthesizing Unit <register_file>.
-    Related source file is "C:/Users/OWner/Documents/CENG 450/lab/register.vhd".
+    Related source file is "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/register.vhd".
     Found 16-bit 8-to-1 multiplexer for signal <rd_data1>.
     Found 16-bit 8-to-1 multiplexer for signal <rd_data2>.
     Found 128-bit register for signal <reg_file>.
@@ -426,7 +427,7 @@ Unit <register_file> synthesized.
 
 
 Synthesizing Unit <control>.
-    Related source file is "C:/Users/OWner/Documents/CENG 450/lab/control.vhd".
+    Related source file is "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/control.vhd".
 WARNING:Xst:647 - Input <CLK> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <RST> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:646 - Signal <m1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
@@ -437,7 +438,7 @@ Unit <control> synthesized.
 
 
 Synthesizing Unit <mux_3to1_16bit>.
-    Related source file is "C:/Users/OWner/Documents/CENG 450/lab/mux_3to1_16bit.vhd".
+    Related source file is "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/mux_3to1_16bit.vhd".
 Unit <mux_3to1_16bit> synthesized.
 
 
@@ -759,12 +760,12 @@ Delay:               19.709ns (Levels of Logic = 13)
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 8.50 secs
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 9.64 secs
  
 --> 
 
-Total memory usage is 324152 kilobytes
+Total memory usage is 311060 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   62 (   0 filtered)

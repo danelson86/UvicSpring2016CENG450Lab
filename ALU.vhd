@@ -10,7 +10,8 @@ entity ALU is
            rst : in  STD_LOGIC;
            result : out  STD_LOGIC_VECTOR (15 downto 0);
            z_flag : out  STD_LOGIC;
-           n_flag : out  STD_LOGIC);
+           n_flag : out  STD_LOGIC
+			 );
 end ALU;
 
 architecture Behavioral of ALU is

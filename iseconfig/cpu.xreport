@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2016-02-22T19:39:27</DateModified>
+  <DateModified>2016-02-25T16:13:11</DateModified>
   <ModuleName>cpu</ModuleName>
-  <SummaryTimeStamp>2016-02-22T19:35:14</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/OWner/Documents/CENG 450/lab/iseconfig/cpu.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/OWner/Documents/CENG 450/lab\</ImplementationReportsDirectory>
+  <SummaryTimeStamp>2016-02-25T16:13:10</SummaryTimeStamp>
+  <SavedFilePath>C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/iseconfig/cpu.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b\</ImplementationReportsDirectory>
   <DateInitialized>2016-02-22T00:40:57</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

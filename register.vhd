@@ -19,7 +19,7 @@ end register_file;
 
 architecture behavioural of register_file is
 	type reg_array is array (integer range 0 to 7) of std_logic_vector(15 downto 0);
-	--signal reg_file : reg_array;
+--	signal reg_file : reg_array;
 	
 	--reg_file with initial values for testing. REMOVE FROM FINAL CODE
 	signal reg_file : reg_array := (X"000F", X"00F0", X"0F00", X"F000", X"0001", X"0002", X"0003", X"0004");

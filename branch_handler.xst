@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/xst"
+elaborate
+-ifn branch_handler.prj
+-ifmt mixed

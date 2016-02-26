@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/OWner/Documents/CENG 450/lab/register.vhd";
+static const char *ng0 = "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/register.vhd";
 extern char *IEEE_P_3620187407;
 
 
@@ -110,9 +110,9 @@ LAB5:    t2 = (t0 + 1152U);
     goto LAB7;
 
 LAB8:    xsi_set_current_line(33, ng0);
-    t7 = (t0 + 7564);
+    t7 = (t0 + 8044);
     *((int *)t7) = 0;
-    t11 = (t0 + 7568);
+    t11 = (t0 + 8048);
     *((int *)t11) = 7;
     t12 = 0;
     t13 = 7;
@@ -127,7 +127,7 @@ LAB12:    xsi_set_current_line(34, ng0);
     memset(t14, 0, 16U);
     t15 = t14;
     memset(t15, (unsigned char)2, 16U);
-    t16 = (t0 + 7564);
+    t16 = (t0 + 8044);
     t17 = *((int *)t16);
     t18 = (t17 - 0);
     t19 = (t18 * 1);
@@ -141,16 +141,16 @@ LAB12:    xsi_set_current_line(34, ng0);
     memcpy(t26, t14, 16U);
     xsi_driver_first_trans_delta(t22, t21, 16U, 0LL);
 
-LAB13:    t2 = (t0 + 7564);
+LAB13:    t2 = (t0 + 8044);
     t12 = *((int *)t2);
-    t3 = (t0 + 7568);
+    t3 = (t0 + 8048);
     t13 = *((int *)t3);
     if (t12 == t13)
         goto LAB14;
 
 LAB15:    t17 = (t12 + 1);
     t12 = t17;
-    t7 = (t0 + 7564);
+    t7 = (t0 + 8044);
     *((int *)t7) = t12;
     goto LAB11;
 
@@ -161,42 +161,42 @@ LAB16:    xsi_set_current_line(37, ng0);
     t20 = (t19 * 1U);
     t21 = (0 + t20);
     t2 = (t7 + t21);
-    t8 = (t0 + 7572);
+    t8 = (t0 + 8052);
     t12 = xsi_mem_cmp(t8, t2, 3U);
     if (t12 == 1)
         goto LAB19;
 
-LAB28:    t14 = (t0 + 7575);
+LAB28:    t14 = (t0 + 8055);
     t13 = xsi_mem_cmp(t14, t2, 3U);
     if (t13 == 1)
         goto LAB20;
 
-LAB29:    t16 = (t0 + 7578);
+LAB29:    t16 = (t0 + 8058);
     t17 = xsi_mem_cmp(t16, t2, 3U);
     if (t17 == 1)
         goto LAB21;
 
-LAB30:    t23 = (t0 + 7581);
+LAB30:    t23 = (t0 + 8061);
     t18 = xsi_mem_cmp(t23, t2, 3U);
     if (t18 == 1)
         goto LAB22;
 
-LAB31:    t25 = (t0 + 7584);
+LAB31:    t25 = (t0 + 8064);
     t27 = xsi_mem_cmp(t25, t2, 3U);
     if (t27 == 1)
         goto LAB23;
 
-LAB32:    t28 = (t0 + 7587);
+LAB32:    t28 = (t0 + 8067);
     t30 = xsi_mem_cmp(t28, t2, 3U);
     if (t30 == 1)
         goto LAB24;
 
-LAB33:    t31 = (t0 + 7590);
+LAB33:    t31 = (t0 + 8070);
     t33 = xsi_mem_cmp(t31, t2, 3U);
     if (t33 == 1)
         goto LAB25;
 
-LAB34:    t34 = (t0 + 7593);
+LAB34:    t34 = (t0 + 8073);
     t36 = xsi_mem_cmp(t34, t2, 3U);
     if (t36 == 1)
         goto LAB26;
@@ -449,8 +449,8 @@ static void work_a_2615964831_1878664202_p_1(char *t0)
 LAB0:    xsi_set_current_line(53, ng0);
     t1 = (t0 + 1352U);
     t2 = *((char **)t1);
-    t1 = (t0 + 7272U);
-    t3 = (t0 + 7596);
+    t1 = (t0 + 7752U);
+    t3 = (t0 + 8076);
     t6 = (t5 + 0U);
     t7 = (t6 + 0U);
     *((int *)t7) = 0;
@@ -469,8 +469,8 @@ LAB0:    xsi_set_current_line(53, ng0);
 
 LAB4:    t20 = (t0 + 1352U);
     t21 = *((char **)t20);
-    t20 = (t0 + 7272U);
-    t22 = (t0 + 7599);
+    t20 = (t0 + 7752U);
+    t22 = (t0 + 8079);
     t25 = (t24 + 0U);
     t26 = (t25 + 0U);
     *((int *)t26) = 0;
@@ -489,8 +489,8 @@ LAB4:    t20 = (t0 + 1352U);
 
 LAB6:    t39 = (t0 + 1352U);
     t40 = *((char **)t39);
-    t39 = (t0 + 7272U);
-    t41 = (t0 + 7602);
+    t39 = (t0 + 7752U);
+    t41 = (t0 + 8082);
     t44 = (t43 + 0U);
     t45 = (t44 + 0U);
     *((int *)t45) = 0;
@@ -509,8 +509,8 @@ LAB6:    t39 = (t0 + 1352U);
 
 LAB8:    t58 = (t0 + 1352U);
     t59 = *((char **)t58);
-    t58 = (t0 + 7272U);
-    t60 = (t0 + 7605);
+    t58 = (t0 + 7752U);
+    t60 = (t0 + 8085);
     t63 = (t62 + 0U);
     t64 = (t63 + 0U);
     *((int *)t64) = 0;
@@ -529,8 +529,8 @@ LAB8:    t58 = (t0 + 1352U);
 
 LAB10:    t77 = (t0 + 1352U);
     t78 = *((char **)t77);
-    t77 = (t0 + 7272U);
-    t79 = (t0 + 7608);
+    t77 = (t0 + 7752U);
+    t79 = (t0 + 8088);
     t82 = (t81 + 0U);
     t83 = (t82 + 0U);
     *((int *)t83) = 0;
@@ -549,8 +549,8 @@ LAB10:    t77 = (t0 + 1352U);
 
 LAB12:    t96 = (t0 + 1352U);
     t97 = *((char **)t96);
-    t96 = (t0 + 7272U);
-    t98 = (t0 + 7611);
+    t96 = (t0 + 7752U);
+    t98 = (t0 + 8091);
     t101 = (t100 + 0U);
     t102 = (t101 + 0U);
     *((int *)t102) = 0;
@@ -569,8 +569,8 @@ LAB12:    t96 = (t0 + 1352U);
 
 LAB14:    t115 = (t0 + 1352U);
     t116 = *((char **)t115);
-    t115 = (t0 + 7272U);
-    t117 = (t0 + 7614);
+    t115 = (t0 + 7752U);
+    t117 = (t0 + 8094);
     t120 = (t119 + 0U);
     t121 = (t120 + 0U);
     *((int *)t121) = 0;
@@ -867,8 +867,8 @@ static void work_a_2615964831_1878664202_p_2(char *t0)
 LAB0:    xsi_set_current_line(61, ng0);
     t1 = (t0 + 1672U);
     t2 = *((char **)t1);
-    t1 = (t0 + 7304U);
-    t3 = (t0 + 7617);
+    t1 = (t0 + 7784U);
+    t3 = (t0 + 8097);
     t6 = (t5 + 0U);
     t7 = (t6 + 0U);
     *((int *)t7) = 0;
@@ -887,8 +887,8 @@ LAB0:    xsi_set_current_line(61, ng0);
 
 LAB4:    t20 = (t0 + 1672U);
     t21 = *((char **)t20);
-    t20 = (t0 + 7304U);
-    t22 = (t0 + 7620);
+    t20 = (t0 + 7784U);
+    t22 = (t0 + 8100);
     t25 = (t24 + 0U);
     t26 = (t25 + 0U);
     *((int *)t26) = 0;
@@ -907,8 +907,8 @@ LAB4:    t20 = (t0 + 1672U);
 
 LAB6:    t39 = (t0 + 1672U);
     t40 = *((char **)t39);
-    t39 = (t0 + 7304U);
-    t41 = (t0 + 7623);
+    t39 = (t0 + 7784U);
+    t41 = (t0 + 8103);
     t44 = (t43 + 0U);
     t45 = (t44 + 0U);
     *((int *)t45) = 0;
@@ -927,8 +927,8 @@ LAB6:    t39 = (t0 + 1672U);
 
 LAB8:    t58 = (t0 + 1672U);
     t59 = *((char **)t58);
-    t58 = (t0 + 7304U);
-    t60 = (t0 + 7626);
+    t58 = (t0 + 7784U);
+    t60 = (t0 + 8106);
     t63 = (t62 + 0U);
     t64 = (t63 + 0U);
     *((int *)t64) = 0;
@@ -947,8 +947,8 @@ LAB8:    t58 = (t0 + 1672U);
 
 LAB10:    t77 = (t0 + 1672U);
     t78 = *((char **)t77);
-    t77 = (t0 + 7304U);
-    t79 = (t0 + 7629);
+    t77 = (t0 + 7784U);
+    t79 = (t0 + 8109);
     t82 = (t81 + 0U);
     t83 = (t82 + 0U);
     *((int *)t83) = 0;
@@ -967,8 +967,8 @@ LAB10:    t77 = (t0 + 1672U);
 
 LAB12:    t96 = (t0 + 1672U);
     t97 = *((char **)t96);
-    t96 = (t0 + 7304U);
-    t98 = (t0 + 7632);
+    t96 = (t0 + 7784U);
+    t98 = (t0 + 8112);
     t101 = (t100 + 0U);
     t102 = (t101 + 0U);
     *((int *)t102) = 0;
@@ -987,8 +987,8 @@ LAB12:    t96 = (t0 + 1672U);
 
 LAB14:    t115 = (t0 + 1672U);
     t116 = *((char **)t115);
-    t115 = (t0 + 7304U);
-    t117 = (t0 + 7635);
+    t115 = (t0 + 7784U);
+    t117 = (t0 + 8115);
     t120 = (t119 + 0U);
     t121 = (t120 + 0U);
     *((int *)t121) = 0;
