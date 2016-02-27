@@ -1,56 +1,6 @@
-select figure at 1713 1138 8 -wires -sn=1
-move wire at 1712 1104 1712 1216 to 1728 1104 1728 1216 -keepConn -sn=1
-select figure at 1713 1234 8 -wires -sn=1
-select figure at 1728 1162 8 -wires -sn=1
-move wire at 1728 1104 1728 1216 to 1760 1104 1760 1216 -keepConn -sn=1
-select figure at 1721 1191 8 -wires -sn=1
-select figure at 1724 1201 8 -wires -sn=1
-undo
-select figure at 1759 1237 8 -wires -sn=1
-undo
-undo
-undo
-undo
-undo
-undo
-undo
-select figure at 1713 1140 8 -wires -sn=1
-move wire at 1712 1104 1712 1216 to 1728 1104 1728 1216 -keepConn -sn=1
-select figure at 1710 1177 8 -wires -sn=1
-select figure at 1727 1168 8 -wires -sn=1
-move wire at 1728 1104 1728 1216 to 1760 1104 1760 1216 -keepConn -sn=1
-select figure at 1713 1205 8 -wires -sn=1
-move wire at 1712 1168 1712 1232 to 1728 1168 1728 1232 -keepConn -sn=1
-select figure at 1682 1231 8 -wires -sn=1
-move wire at 1616 1232 1712 1232 to 1616 1216 1712 1216 -keepConn -sn=1
-select figure at 1710 1252 8 -wires -sn=1
-move wire at 1712 1232 1712 1280 to 1728 1232 1728 1280 -keepConn -sn=1
-move wire at 1728 1232 1728 1280 to 1824 1232 1824 1280 -keepConn -sn=1
-undo
-undo
-undo
-undo
-undo
-undo
-undo
-undo
-undo
-undo
-undo
-undo
-select figure at 1747 1149 8 -wires -toggle -sn=1
-undo
-select figure at 1716 1137 8 -wires -sn=1
-move wire at 1712 1104 1712 1216 to 1744 1104 1744 1216 -keepConn -sn=1
-select figure at 1707 1384 8 -wires -sn=1
-move wire at 1712 1360 1712 1472 to 1680 1360 1680 1472 -keepConn -sn=1
-select figure at 1710 1424 8 -wires -sn=1
-move selection by 16 0 -keepConn -sn=1
-undo
-undo
-undo
-undo
-undo
-undo
-select figure at 1732 1158 8 -wires -sn=1
-undo
+select figure at 1018 3589 8 -branches -sn=1
+select figure at 679 1331 8 -branches -sn=1
+select figure at 664 1257 8 -branches -sn=1
+select figure at 653 1274 8 -branches -sn=1
+select figure at 696 1326 8 -branches -sn=1
+select figure at 1874 1828 8 -branches -sn=1

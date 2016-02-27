@@ -1,0 +1,3 @@
+vhdl work "register.vhd"
+vhdl work "control.vhd"
+vhdl work "control_tb.vhd"

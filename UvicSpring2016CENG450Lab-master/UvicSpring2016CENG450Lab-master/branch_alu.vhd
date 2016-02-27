@@ -2,17 +2,19 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.all;
 
-entity execute_alu is
+entity BRANCH_ALU is
     Port ( in1 : in  STD_LOGIC_VECTOR (15 downto 0);
            in2 : in  STD_LOGIC_VECTOR (15 downto 0);
            alu_mode : in  STD_LOGIC_VECTOR (2 downto 0);
            clk : in  STD_LOGIC;
            rst : in  STD_LOGIC;
-           result : out  STD_LOGIC_VECTOR (15 downto 0)
+           result : out  STD_LOGIC_VECTOR (15 downto 0);
+           z_flag : out  STD_LOGIC;
+           n_flag : out  STD_LOGIC
 			 );
-end execute_alu;
+end BRANCH_ALU;
 
-architecture Behavioral of execute_alu is
+architecture Behavioral of BRANCH_ALU is
 	signal calc_result :  STD_LOGIC_VECTOR (15 downto 0);
 begin
 
@@ -43,6 +45,27 @@ begin
 	--output the result 
 	result <= calc_result;
 	
+	--Generate z_flag
+	generate_zflags:process(clk)
+	begin
+		if(clk = '1' and clk'event) then
+			case calc_result (15 downto 0) is
+				when X"0000" => z_flag <= '1';
+				when others => z_flag <= '0';
+			end case;
+		end if;
+	end process;
+	
+	--Generate n_flag
+	generate_nflags:process(clk)
+	begin
+		if(clk = '1' and clk'event) then
+			case calc_result (15 downto 15) is
+				when "1" => n_flag <= '1';
+				when others => n_flag <= '0';
+			end case;
+		end if;
+	end process;
 	
 end Behavioral;
 

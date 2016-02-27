@@ -46,10 +46,10 @@ ARCHITECTURE behavior OF bh_tb IS
          disp1 : IN  std_logic_vector(8 downto 0);
          disps : IN  std_logic_vector(5 downto 0);
          current_pc : IN  std_logic_vector(15 downto 0);
-         ra_in : IN  std_logic_vector(15 downto 0);
+         addr_in : IN  std_logic_vector(15 downto 0);
          r7_in : IN  std_logic_vector(15 downto 0);
-         z_flag : IN  std_logic;
-         n_flag : IN  std_logic;
+         z_flag : OUT  std_logic;
+         n_flag : OUT  std_logic;
          BranchTaken : OUT  std_logic;
          next_pc : OUT  std_logic_vector(15 downto 0);
 			r7_out  : out  std_logic_vector(15 downto 0)
@@ -63,7 +63,7 @@ ARCHITECTURE behavior OF bh_tb IS
    signal disp1 : std_logic_vector(8 downto 0) := (others => '0');
    signal disps : std_logic_vector(5 downto 0) := (others => '0');
    signal current_pc : std_logic_vector(15 downto 0) := (others => '0');
-   signal ra_in : std_logic_vector(15 downto 0) := (others => '0');
+   signal addr_in : std_logic_vector(15 downto 0) := (others => '0');
    signal r7_in : std_logic_vector(15 downto 0) := (others => '0');
    signal z_flag : std_logic := '0';
    signal n_flag : std_logic := '0';
@@ -87,7 +87,7 @@ BEGIN
           disp1 => disp1,
           disps => disps,
           current_pc => current_pc,
-          ra_in => ra_in,
+          addr_in => addr_in,
           r7_in => r7_in,
           z_flag => z_flag,
           n_flag => n_flag,
@@ -104,37 +104,48 @@ BEGIN
 		CLK <= '1';
 		wait for CLK_period/2;
    end process;
+	
+	process(clk)
+	begin
+			if falling_edge(clk) then
+				current_pc <= next_pc; 
+		end if; 
+	end process;
+	
+	
 
    -- Stimulus process
    stim_proc: process
    begin		
-      -- hold reset state for 100 ns.
+
+		--Start at 1
+     	current_pc <= X"0001";
       wait for 100 ns;	
 
-		current_pc <= X"0080";
-		disp1 <= "000000010";
-		Opcode <= "1000000";
-		wait for 100 ns;	
-		
-		
-		Opcode <= "1000000";
-		Z_FLAG <= '1';
+		--Jum 4 ahead = 5
+		disp1 <= "000000100";
+		Opcode <= "1000000"; 
 		
 		wait for 100 ns;	
 		
+		--Jump 4 back = 1
+		disp1 <= "111111100";
+
+		wait for 100 ns;	
+		
+		-- JUmp 8 back = -7
 		disp1 <= "111111000";
-		
 		wait for 100 ns;	
 		
-		disp1 <= "011111000";
- 
+		--Jump 8 Back = 1
+		disp1 <= "000001000";
       -- insert stimulus here 
 		
 		wait for 100 ns;	
-		
 		disp1 <= "100000000";
 
       wait;
    end process;
+
 
 END;
