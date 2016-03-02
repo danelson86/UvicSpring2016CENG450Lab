@@ -9,42 +9,69 @@ entity control is
            CLK : in  STD_LOGIC;
            RST : in  STD_LOGIC;	
 			  
-			  RegWriteData : in  STD_LOGIC_VECTOR (15 downto 0);
-			  WriteEnableIn : in std_logic;
-			  WriteIndexIn : in std_logic_vector(2 downto 0);
-			  WriteIndexOut : out std_logic_vector(2 downto 0);
-			  WriteEnableOut : out std_logic;
-			  
-
-				-- Branch Instruction Data in and Out
-			  CurrentPC : in STD_LOGIC_VECTOR (6 downto 0);
+			  --Incoming WB Signals
+			  WB_Data : in  STD_LOGIC_VECTOR (15 downto 0);
+			  WB_Addr : in  STD_LOGIC_VECTOR (2 downto 0);
+			  wb_en : in std_logic;
+			  WB_AddrX : out  STD_LOGIC_VECTOR (2 downto 0);
+			
+			  --Enable Flags
+			  add_en : out std_logic;
+			  sub_en : out std_logic;
+			  mul_en : out std_logic;
+			  nand_en : out std_logic;
+			  shl_en : out std_logic;
+			  shr_en : out std_logic;
+			  load_en : out std_logic;
+			  loadimm_en : out std_logic;
+			  mov_en : out std_logic;
+			  in_en :  out std_logic;
+			  out_en : out std_logic;
+			  store_en :out std_logic;
+	
+			  -- Branch Instruction Data in and Out
 			  BranchTaken : out std_logic;
-			  BranchPC : out  STD_LOGIC_VECTOR (6 downto 0);			  
+			  BranchPC : out  STD_LOGIC_VECTOR (15 downto 0);			  
+			  CurrentPC : in STD_LOGIC_VECTOR (15 downto 0);
 			  
-			  --Outputs for ALU use
-			  ALUMode : out  STD_LOGIC_VECTOR (2 downto 0);
-			  ALUIN2Src : out  STD_LOGIC_VECTOR (1 downto 0);
-			  ALU_Dest : out STD_LOGIC_VECTOR (1 downto 0);
-			  ALU_Data_A : out  STD_LOGIC_VECTOR (15 downto 0);
-			  ALU_Data_B : out  STD_LOGIC_VECTOR (15 downto 0);
-			  
-			  
-			  ImmData : out  STD_LOGIC_VECTOR (15 downto 0);
-
-			  --Outputs for MEM us
-			  MemMode : out STD_LOGIC_VECTOR (1 downto 0);
-			  MemDestAddr : out STD_LOGIC_VECTOR (2 downto 0);
-			  MemSrcAddr : out STD_LOGIC_VECTOR (2 downto 0);
-			  MemData : out STD_LOGIC_VECTOR(15 downto 0);
-			  
-			  Extern_In : in STD_LOGIC_VECTOR(15 downto 0);
-			  Extern_Out : out STD_LOGIC_VECTOR(15 downto 0));
+			  --Data Signals
+			  In_Data : in STD_LOGIC_VECTOR(15 downto 0);
+			  Data_1 : out  STD_LOGIC_VECTOR (15 downto 0);
+			  Data_2 : out  STD_LOGIC_VECTOR (15 downto 0));
 end control;
-
+ 
 architecture Behavioral of control is
+
+----------------------------------------------- Constants for decoding OPCODE------------------------------------------------
+	--A Format instructions
+	constant ADD : std_logic_vector (6 downto 0) := "0000001";
+	constant SUB : std_logic_vector (6 downto 0) := "0000010";
+	constant MUL : std_logic_vector (6 downto 0) := "0000011";
+	constant OP_NAND : std_logic_vector (6 downto 0) := "0000100";
+	constant SHL : std_logic_vector (6 downto 0) := "0000101";
+	constant SHR : std_logic_vector (6 downto 0) := "0000110";
+	constant TEST : std_logic_vector (6 downto 0) := "0000111";
+	constant OP_OUT : std_logic_vector (6 downto 0) := "0100000";
+	constant OP_IN  : std_logic_vector (6 downto 0) := "0100001";
+	
+	--Format B Instructioms
+	constant BRR : std_logic_vector (6 downto 0) := "1000000";
+	constant BRRN : std_logic_vector (6 downto 0) := "1000010";
+	constant BRRZ : std_logic_vector (6 downto 0) := "1000011";
+	constant BR : std_logic_vector (6 downto 0) := "1000011";
+	constant BRN : std_logic_vector (6 downto 0) := "1000100";
+	constant BRZ : std_logic_vector (6 downto 0) := "1000101";
+	constant BRSUB : std_logic_vector (6 downto 0) := "1000110";
+	constant OP_RETURN : std_logic_vector (6 downto 0) := "1000111";
+	
+	--Format L Instructions
+	constant LOAD :  std_logic_vector(6 downto 0):= "0010000";
+	constant STORE :  std_logic_vector(6 downto 0):= "0010001";
+	constant LOADIMM :  std_logic_vector(6 downto 0):= "0010010";
+	constant MOV :  std_logic_vector(6 downto 0):= "0010011";
 	
 	
---------------------------Begin Register---------------------------------------------
+--------------------------------------Begin Register instantiation---------------------------------------------
 
 	component register_file is
 		port(
@@ -58,309 +85,202 @@ architecture Behavioral of control is
 				--write signals
 				wr_index: in std_logic_vector(2 downto 0);
 				wr_data: in std_logic_vector(15 downto 0);
-				wr_enable: in std_logic);
+				wr_enable: in std_logic				
+				);
 	end component;
 	
-	-- Signals for Register File
-	signal rd_index1 : std_logic_vector(2 downto 0);
-	signal rd_data1 : std_logic_vector(15 downto 0);
-	signal rd_index2 : std_logic_vector(2 downto 0);
-	signal rd_data2 : std_logic_vector(15 downto 0);
-	signal wr_index : std_logic_vector(2 downto 0);
-	signal wr_data : std_logic_vector(15 downto 0);
-	signal wr_enable : std_logic;
+	-- Signals for MainRegister File
+	signal Mrd_index1 : std_logic_vector(2 downto 0);
+	signal Mrd_data1 : std_logic_vector(15 downto 0);
+	signal Mrd_index2 : std_logic_vector(2 downto 0);
+	signal Mrd_data2 : std_logic_vector(15 downto 0);
+	signal Mwr_index : std_logic_vector(2 downto 0);
+	signal Mwr_data : std_logic_vector(15 downto 0);
+	signal Mwr_enable : std_logic;
 	
-	-------------------------------End Register --------------------------------------------------------
+	signal Srd_index1 : std_logic_vector(2 downto 0);
+	signal Srd_data1 : std_logic_vector(15 downto 0);
+	signal Srd_index2 : std_logic_vector(2 downto 0);
+	signal Srd_data2 : std_logic_vector(15 downto 0);
+	signal Swr_index : std_logic_vector(2 downto 0);
+	signal Swr_data : std_logic_vector(15 downto 0);
+	signal Swr_enable : std_logic;
 	
-
-	--Common fields and Format-A fields
+	----------------------------------------- Format-A and common Fields -----------------------------------------------------------
 	signal opcode :  STD_LOGIC_VECTOR (6 downto 0);
 	signal ra :  STD_LOGIC_VECTOR (2 downto 0);
 	signal rb :  STD_LOGIC_VECTOR (2 downto 0);
 	signal rc :  STD_LOGIC_VECTOR (2 downto 0);
-	signal c1 :  STD_LOGIC_VECTOR (3 downto 0);
+	signal c1 :  STD_LOGIC_VECTOR (15 downto 0);
 	
-	--Format B fields
-	signal disp1 :STD_LOGIC_VECTOR(8 downto 0);
-	signal disps : STD_LOGIC_VECTOR(5 downto 0);  
+	----------------------------------------Format B fields and intermediate signals ---------------------------------------------------
 	signal n_flag : STD_LOGIC;
 	signal z_flag : STD_LOGIC;
+	signal n_bit : std_logic_vector(1 downto 1);
+	signal sign_extended_disp1 : signed(15 downto 0);
+	signal sign_extended_disps : signed(15 downto 0);
+	signal signed_PC : signed (15 downto 0);
+	signal BR_PC : std_logic_vector (15 downto 0);
+	signal BRR_PC : std_logic_vector (15 downto 0);
+	signal NB_PC : std_logic_vector (15 downto 0);
 	
-	--Format-L fields
-	--Note: use RA for R.DEST and RB for R.SRC
-	signal imm :  STD_LOGIC_VECTOR (7 downto 0);
-	signal imm_temp_data : std_logic_vector (15 downto 0);
-	signal m1 : std_logic;
+	--------------------------------------Format-L fields and itermediate signal---------------------------------------------------------
 
+	signal imm :  STD_LOGIC_VECTOR (7 downto 0);
+	signal m1 :std_logic;
+	
+	signal R7 : std_logic_vector (15 downto 0);
 	
 begin
 
-	REG : register_file port map(rst, clk, rd_index1,rd_data1,rd_index2,rd_data2,wr_index,wr_data,wr_enable);
+	MainRegister : register_file port map(rst, clk, Mrd_index1, Mrd_data1, Mrd_index2, Mrd_data2, Mwr_index,Mwr_data,Mwr_enable);
+	ShadowRegister : register_file port map(rst, clk, Srd_index1,Srd_data1,Srd_index2,Srd_data2, Swr_index, Swr_data,Swr_enable);
 												
 	--Break up the entire instruction into potential fields 
 	opcode <= INSTR(15 downto 9);
 	
-	--Format A 	Fields 
+	-------------------------------------Format A Intermediate Values 	---------------------------------------------------------------
 	ra <= INSTR(8 downto 6);
 	rb <= INSTR(5 downto 3);
 	rc <= INSTR(2 downto 0);
-	c1 <= INSTR(3 downto 0);
+	c1 <= std_logic_vector(resize(unsigned(INSTR(3 downto 0)), 15));
 	
-	--Format B Fields
-	disp1 <= INSTR(8 downto 0);
-	disps <= INSTR(5 downto 0);   
+	-------------------------------------- Format B Intermediate Values ----------------------------------------------------------------
+	n_bit <=  (rd_data1 (15 downto 15));
+	sign_extended_disp1 <= resize(signed(INSTR(8 downto 0)), 16 );
+	sign_extended_disps  <= resize(signed(INSTR(5 downto 0)), 16 );
+	signed_PC <= signed(CurrentPC);
 	
-	--Format L Fields
-	imm <= INSTR(7 downto 0);
+	BRR_PC <= std_logic_vector( to_unsigned(to_integer(signed_PC) + to_integer(sign_extended_disp1 ), 16 ));
+	BR_PC  <= std_logic_vector( to_unsigned(to_integer(signed(rd_data1)) + to_integer(sign_extended_disps ), 16 )) ;
+	NB_PC <= std_logic_vector( to_unsigned(to_integer(signed_PC) + 2 , 16));
+	
+	-------------------------------------Format L  Intermediate Values -----------------------------------------------------------------
+	imm <= (INSTR(7 downto 0));
 	m1 <= (INSTR(8));
 	
-	--TODO Handle multiple write access
-	wr_data <= RegWriteData;
-	wr_enable <= WriteEnableIn;
-	wr_index <= WriteIndexIn;
+	------------------------------------------- Write Operations ---------------------------------------------------------------------
+	Mwr_index  <=  WB_Addr when ( wb_en = '1' ) else
+					  ("111") when (OPCODE = BRSUB) else
+					  ("111") when (OPCODE = LOADIMM) else "000";
+
+	--Need to implement LOADIMM
+	Mwr_data	 <=  WB_Data when ( wb_en = '1' ) else
+					  NB_PC when (OPCODE = BRSUB) else X"0000";
+				  
+
+	Mwr_enable<= '1' when (wb_en = '1') else
+					 '1' when (OPCODE = BRSUB) else
+					 '1' when (OPCODE = LOADIMM) else '0';
+
+	WB_AddrX <=  ra when (OPCODE =  ADD) else
+					 ra when (OPCODE =  SUB) else
+					 ra when (OPCODE =  MUL) else
+					 ra when (OPCODE =  OP_NAND) else
+					 ra when (OPCODE =  SHL) else
+					 ra when (OPCODE =  SHR) else
+					 ra when (OPCODE =  OP_IN) else
+					 ra when (OPCODE =  MOV) else
+					 ra when (OPCODE =  LOAD) else "000";
+					 
+					 
+-------------------------------------------- Get data from Reg port 1 --------------------------------------------------------
+
+	Mrd_index1<= ra when (OPCODE =  SHL) else 
+					 ra when (OPCODE =  SHR) else 
+					 ra when (OPCODE =  OP_OUT) else 
+					 ra when (OPCODE =  OP_OUT) else 
+					 ra when (OPCODE =  OP_NAND) else 
+					 ra when (OPCODE =  STORE) else 
+					 ra when (OPCODE =   BR) else 
+					 ra when (OPCODE =  BRN) else 
+					 ra when (OPCODE =  BRZ) else 
+					 ra when (OPCODE =  LOAD) else 
+					 ra when (OPCODE =  BRSUB) else 
+					 rb when (OPCODE =  ADD) else 
+					 rb when (OPCODE =  SUB) else 
+					 rb when (OPCODE =  MUL) else 
+					 rb when (OPCODE =  MOV) else 
+					 "111" when (OPCODE =  OP_RETURN) else "000";
+					 
+	Data_1   <=  Mrd_data1 when (OPCODE = SHL)	else
+					 Mrd_data1 when (OPCODE = SHR)	else
+					 Mrd_data1 when (OPCODE = OP_OUT)	else
+					 Mrd_data1 when (OPCODE = OP_NAND)	else
+					 Mrd_data1 when (OPCODE = ADD)	else
+					 Mrd_data1 when (OPCODE = MOV)	else
+					 Mrd_data1 when (OPCODE = STORE)	else
+					 Mrd_data1 when (OPCODE = MUL)	else
+					 Mrd_data1 when (OPCODE = OP_RETURN)	else
+					 In_Data   when (OPCODE = OP_IN)	else X"0000";
+					 
+	R7			<=  Mrd_data1 when (OPCODE = OP_RETURN)	else X"0000";
 	
-	MemDestAddr <= ra;
-	MemSrcAddr <= rb;
+
+-------------------------------------------- Get data from Reg port 2 --------------------------------------------------------	
+	Mrd_index2<= rb when (OPCODE = LOAD ) else
+					 rb when (OPCODE = STORE ) else
+					 rb when (OPCODE = OP_NAND ) else
+					 rc when (OPCODE = ADD ) else
+					 rc when (OPCODE = SUB ) else
+					 rc when (OPCODE = MUL ) else "000";		 
+	 
+	Data_2   <=	 Mrd_data2 when (OPCODE = LOAD) else	 
+					 Mrd_data2 when (OPCODE = STORE) else	
+					 Mrd_data2 when (OPCODE = OP_NAND) else	
+					 Mrd_data2 when (OPCODE =  ADD) else	
+					 Mrd_data2 when (OPCODE = SUB) else	
+					 Mrd_data2 when (OPCODE = MUL) else	
+					 c1		  when (OPCODE = SHL) else	
+					 c1		  when (OPCODE = SHR) else	X"0000";
+
+	-------------------------------------------- Set enable bits  --------------------------------------------------------
 	
-	Extern_Out <= Extern_In;
+	add_en 		<= '1' when (OPCODE = ADD) else '0';
+	sub_en 		<= '1' when (OPCODE = SUB) else '0';
+	mul_en 		<= '1' when (OPCODE = MUL) else '0';
+	nand_en 		<= '1' when (OPCODE = OP_NAND) else '0';
+	shl_en 		<= '1' when (OPCODE = SHL) else '0';
+	shr_en 		<= '1' when (OPCODE = SHR) else '0';
+	store_en 	<= '1' when (OPCODE = STORE) else '0';
+	load_en 		<= '1' when (OPCODE = LOAD) else '0';
+	loadimm_en	<= '1' when (OPCODE = LOADIMM) else '0';
+	mov_en 		<= '1' when (OPCODE = MOV) else '0';
+	out_en 		<= '1' when (OPCODE = OP_OUT) else '0';
+	in_en 		<= '1' when (OPCODE = OP_IN) else '0';
+
+----------------------------------------------- Format B Branch handling -------------------------------------------------------------------
+
 	
-	ALU_Data_A <= rd_data1;
-	ALU_Data_B <= rd_data2;
+	n_flag <= '1' when ( n_bit = "1" ) else '0';
+	z_flag <= '1' when (Mrd_data1 =  X"0000") else '0';
+
+	BranchPC <= BRR_PC  when (OPCODE = BRR ) else
+					BRR_PC  when (OPCODE = BRRN and n_flag = '1' ) else
+					BRR_PC  when (OPCODE = BRRZ and z_flag = '1') else 
+					BR_PC   when (OPCODE = BR ) else 
+					BR_PC   when (OPCODE = BRN and n_flag = '1') else 
+					BR_PC   when (OPCODE = BRZ and z_flag = '1') else 
+--					Data_1  when (OPCODE = BRSUB ) else --Need intermediate signal
+					R7      when (OPCODE = OP_RETURN ) else NB_PC;
 	
-	
---	route_dataRdData1 : process(INSTR, OPCODE)
---	begin
-----		if rising_edge(clk) then
---			case OPCODE is
---				when "0000001" | "0000010" | "0000011" | "0000100" | "0000101" | "0000110" | "0000111" | "0100000" => ALU_Data_A <= rd_data1;
-----				when "0010000" | "0010001" | "0010010"  => MemData <= rd_data1;
---				when others =>  MemData <= rd_data1;
---			end case;
-----		end if;
---	end process;
---	
---	route_dataRdData2 : process(INSTR, OPCODE)
---	begin
-----		if rising_edge(clk) then
---			case OPCODE is
---				when "0000001" | "0000010" | "0000011" | "0000100" => ALU_Data_B <= rd_data2;
---				when others =>
---			end case;
-----		end if;
---	end process;
+	BranchTaken <= '1'  when (OPCODE = BRR ) else
+						'1'  when (OPCODE = BRRN and n_flag = '1' ) else
+						'1'  when (OPCODE = BRRZ and z_flag = '1') else 
+						'1'  when (OPCODE = BR ) else 
+						'1'  when (OPCODE = BRN and n_flag = '1') else 
+						'1'  when (OPCODE = BRZ and z_flag = '1') else 
+						'1'  when (OPCODE = BRSUB ) else 
+						'1'  when (OPCODE = OP_RETURN ) else '0';
+					
+					--Need to handle NOP insertion when branch taken....
+					
+-----------------------------RAW Hazard Detection and Prevention Data Forwarding and NOPS ------------------------------------------------------
+-- Intermediate signals for both Data_1 and Data_2
+-- ALU Fowards Data to Shadow Register
+-- Read operation will have three case Read Main, Read Shadow, Generate NOP 
+----------------------------------------------------------------------------------------------------
+
 				
-	--Sets the RegRead1 control signal
-	process(INSTR, OPCODE, RA, RB)
-	begin
-		case OPCODE is
-			when "0000001" | "0000010" | "0000011" | "0000100" => rd_index1 <= rb;
-			when "0000101" | "0000110" | "0000111" | "0100000" => rd_index1 <= ra;
-			when others => rd_index1 <= "000";
-		end case; 
-	end process;
-
-	--Sets the RegRead2 control signal
-	process(INSTR, OPCODE, RC)
-	begin
-		case OPCODE is
-			--Opcodes 1,2,3,4 (format As)
-			when "0000001" | "0000010" | "0000011" | "0000100" => rd_index2 <= rc;
-			when others => rd_index2 <= "000";
-		end case;
-	end process;
-		
-	--Sets the RegWrite control signals
-	process(INSTR, OPCODE, RA)
-	begin
-		case OPCODE is
-			--Opcodes 1,2,3,4,5,6,33 (format As)
-			when  "0000001" | "0000010" | "0000011" | "0000100" | "0000101" | "0000110" | "0100001" => WriteIndexOut <= ra;
-			when others => WriteIndexOut <= "000";
-		end case;
-	end process;
-
-	--Sets the RegWriteEn (write to reg after ALU) 
-	process(INSTR, OPCODE)
-	begin
-		--Opcodes 1,2,3,4,5,6,  not 33 (format As)
-		case OPCODE is
-			when "0000001" | "0000010" | "0000011" | "0000100" | "0000101" | "0000110" | "0100001" => WriteEnableOut <= '1';
-			when others => WriteEnableOut <= '0';
-		end case;
-	end process;
-		
-	--Outputs Immediate Data
-	process(INSTR, OPCODE, C1)
-	begin 
-		case OPCODE is
-			--Opcodes 5,6 (format As) Zero extend c1 to 16 bits
-			when "0000101" | "0000110" => ImmData <= std_logic_vector(resize(unsigned(c1), 16));
-			when others => ImmData <= X"0000";
-		end case;
-	end process;
-	
-	--Sets Reg2Src when immediate or external data is used
-	process(INSTR, OPCODE)
-	begin
-		case OPCODE is 
-			--Use immediate data for Opcodes 5,6 (format As)
-			when "0000101" | "0000110" => ALUIN2Src <= "01";
-			--Use external data for Opcodes 33 (format As)
-			when "0100001" => ALUIN2Src <= "10";
-
-			when others => ALUIN2Src <= "00";
-		end case;
-	end process;
-
-	--Sets ALU OPCODE
-	ALU_MODE_SEL:process(INSTR, OPCODE)
-	begin
-		case opcode is
-			--ADD
-			when "0000001" => ALUMode <= "011";
-			--SUB
-			when "0000010" => ALUMode <= "100";
-			--MUL
-			when "0000011" => ALUMode <= "010";
-			--NAND
-			when "0000100" => ALUMode <= "101";
-			--SHL
-			when "0000101" => ALUMode <= "111";
-			--SHR
-			when "0000110" => ALUMode <= "110";
-			--IN uses IN2 Passthrough
-			when "0100001" => ALUMode <= "001";
-			--NOP, TEST, OUT use IN1 Passthrough
-			when others  => ALUMode <= "000";
-		end case;
-	end process;
-	
-	-- TODO complete all instructions 
-	ALU_DEST_CTRL:process(INSTR, OPCODE)
-	begin
-		case OPCODE is
-			when  "0100000"  =>  ALU_DEST <= "10";
-			when  "0010001"  =>  ALU_DEST <= "01";	 
-			when others => ALU_DEST <= "00";
-		end case; 
-	end process;
-
-	--Decode L-Format Instructions 
-	process(INSTR, OPCODE)
-	begin 
-		case opcode is
-			--Load
-			when "0010000" => 
-				MemMode <= "00";
-				rd_index1 <= ra;
-			--Store
-			when "0010001" =>
-				MemMode <= "01";
-				rd_index1 <= ra;
-			-- LOADIMM
-			when "0010010" =>
-				MemMode <= "10";
-				rd_index1<= "111";
-			--Mov	
-			when others => 
-				MemMode <= "11";
-				rd_index1 <= ra;
-		
-		end case;
-	end process;
-	
-	mem_imm : process( M1, clk)
-	begin 
-		if falling_edge(clk) then
-			case M1 is
-				when '1' => imm_temp_data(15 downto 8) <= rd_data1(15 downto 8);
-				when others =>  imm_temp_data(7 downto 0) <= rd_data1(7 downto 0);
-			end case;		
-		end if;
-	end process;
-	
-	
-	test_flags: process(Opcode)
-	begin
-		if falling_edge(clk) then 
-		
-			case rd_data1 (15 downto 15) is
-				when "1" => n_flag <= '1';
-				when others => n_flag <= '0';
-			end case;
-		
-			case rd_data1 (15 downto 0) is
-				when X"0000" => z_flag <= '1';
-				when others => z_flag <= '0';
-			end case;
-
-		end if;
-	end process;
-	
-
-	-- TODO Fix sign extension so negative branches operate correctly
-	branch_relative:process( clk, Opcode, disp1, CurrentPC )
-	begin
-		case Opcode is 
-			--BRR 
-			when "1000000" => 
-					BranchPC <= std_logic_vector( signed(CurrentPC) +  resize(signed(disp1), CurrentPC'length )) ;
-					BranchTaken <= '1';
-			--BRR.N
-			when "1000010" =>
-				if(n_flag = '1') then
-					BranchTaken <= '1'; 
-					BranchPC <= std_logic_vector( signed(CurrentPC) +  resize(signed(disp1), CurrentPC'length )) ;
-				else
-					BranchTaken <= '0';
-				end if;
-			--BRR.Z
-			when "1000011" =>
-				if(z_flag = '1') then
-					BranchTaken <= '1';
-					BranchPC <= std_logic_vector( signed(CurrentPC) +  resize(signed(disp1), CurrentPC'length )) ;
-				else
-					BranchTaken <= '0';
-				end if;
-			when others => BranchTaken <= '0';
-		end case;
-	end process;
---	 
---	branch_absolute: process(Opcode, current_pc, disps, ra_in ,r7_in, z_flag, n_flag)
---	begin
---		case Opcode is 
---			--BR
---			when "1000011" =>
---					next_pc_temp <=  std_logic_vector( signed(ra_in) +  ((-signed(resize(unsigned(dispS), 16 ))) + 1 ) sll 1);
---					takeBranch <= '1';
---			--BRR.N
---			when "1000100" =>
---				if(n_flag = '1') then
---					next_pc_temp <= std_logic_vector( signed(ra_in) +  ((-signed(resize(unsigned(dispS), 16 ))) + 1 ) sll 1);
---					takeBranch <= '1';
---				else
---					takeBranch <= '0';
---				end if;
---			--BRR.Z
---			when "1000101" =>
---				if(z_flag = '1') then
---					next_pc_temp <= std_logic_vector( signed(ra_in) +  ((-signed(resize(unsigned(dispS), 16 ))) + 1 ) sll 1);
---					takeBranch <= '1';
---				else
---					takeBranch <= '0';
---				end if;
---			--BRR.SUB
---			when "1000110" =>
---				r7_out <= current_pc;
---				next_pc_temp <= std_logic_vector( signed(ra_in) + signed(current_pc) + 1);
---			--RETURN
---			when "1000111" =>  
---				next_pc_temp <= r7_in;
---			when others => takeBranch <= '0';
---		end case;
---		BranchTaken <= takeBranch;
---		next_pc <= next_pc_temp;
---	end process;
-	
 end Behavioral;
 

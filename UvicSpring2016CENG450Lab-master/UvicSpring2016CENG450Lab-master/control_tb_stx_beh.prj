@@ -1,0 +1,4 @@
+vhdl isim_temp "register.vhd"
+vhdl isim_temp "control.vhd"
+vhdl isim_temp "control_tb.vhd"
+verilog isim_temp "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
