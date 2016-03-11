@@ -1,0 +1,4 @@
+vhdl work "register.vhd"
+vhdl work "MicroprocessorMisc.vhd"
+vhdl work "memory.vhd"
+vhdl work "MEM_tb.vhd"

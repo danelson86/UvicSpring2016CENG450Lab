@@ -1,23 +1,22 @@
-AR busmux_16bit behavioral "C:/Users/OWner/Documents/CENG 450/lab/busmux_16bit.vhd" sub00/vhpl05 1456135816
-MO IBUF16_MXILINX_cpu NULL cpu.vf vlg78/_i_b_u_f16___m_x_i_l_i_n_x__cpu.bin 1456477559
-EN demux_3to1_16bit NULL "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/demux_3to1_16bit.vhd" sub00/vhpl16 1456477565
-AR mux_3to1_16bit behavioral "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/mux_3to1_16bit.vhd" sub00/vhpl09 1456477568
-MO cpu NULL cpu.vf vlg50/cpu.bin 1456477559
-EN rom_vhdl NULL "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/demo_rom.vhd" sub00/vhpl14 1456477563
-AR instruction_register behavioral "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/instruction_register.vhd" sub00/vhpl13 1456344227
-EN instruction_register NULL "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/instruction_register.vhd" sub00/vhpl12 1456344226
-AR rom_vhdl bhv "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/demo_rom.vhd" sub00/vhpl15 1456477564
-AR register_file behavioural "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/register.vhd" sub00/vhpl07 1456477570
-EN busmux_16bit NULL "C:/Users/OWner/Documents/CENG 450/lab/busmux_16bit.vhd" sub00/vhpl04 1456135815
-AR demux_3to1_16bit behavioral "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/demux_3to1_16bit.vhd" sub00/vhpl17 1456477566
-EN register_file NULL "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/register.vhd" sub00/vhpl06 1456477569
-AR branch_handler behavioral "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/branch_handler.vhd" sub00/vhpl11 1456312381
-EN control NULL "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/control.vhd" sub00/vhpl00 1456477561
-EN mux_3to1_16bit NULL "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/mux_3to1_16bit.vhd" sub00/vhpl08 1456477567
-AR alu behavioral "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/ALU.vhd" sub00/vhpl03 1456477560
-MO blockram_14x16 NULL ipcore_dir/blockram_14x16.v vlg32/blockram__14x16.bin 1456477473
-EN branch_handler NULL "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/lab_feb22b/branch_handler.vhd" sub00/vhpl10 1456312380
-AR control behavioral "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/control.vhd" sub00/vhpl01 1456477562
-MO ram_14x16_MUSER_cpu NULL cpu.vf vlg21/ram__14x16___m_u_s_e_r__cpu.bin 1456477473
-MO ram_14x16 NULL ram_14x16.vf vlg27/ram__14x16.bin 1456477473
-EN alu NULL "C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/ALU.vhd" sub00/vhpl02 1456477559
+EN writeback NULL "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/writeback.vhd" sub00/vhpl16 1457634170
+AR busystatusregister behavioral "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/BusyStatusRegister.vhd" sub00/vhpl05 1457479263
+EN instruction_fetch NULL "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/instruction_fetch.vhd" sub00/vhpl08 1457634162
+AR instruction_fetch behavioral "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/instruction_fetch.vhd" sub00/vhpl09 1457634163
+AR masterregister behavioural "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/MasterRegister.vhd" sub00/vhpl21 1457552157
+PH microprocessormisc NULL "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/MicroprocessorMisc.vhd" sub00/vhpl00 1457634156
+EN rom_vhdl NULL "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/demo_rom.vhd" sub00/vhpl06 1457634160
+PB microprocessormisc microprocessormisc "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/MicroprocessorMisc.vhd" sub00/vhpl01 1457634157
+AR rom_vhdl bhv "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/demo_rom.vhd" sub00/vhpl07 1457634161
+AR register_file behavioural "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/register.vhd" sub00/vhpl03 1457634159
+EN memory NULL "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/memory.vhd" sub00/vhpl14 1457634168
+EN busystatusregister NULL "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/BusyStatusRegister.vhd" sub00/vhpl04 1457479262
+EN register_file NULL "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/register.vhd" sub00/vhpl02 1457634158
+EN masterregister NULL "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/MasterRegister.vhd" sub00/vhpl20 1457552156
+AR memory behavioral "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/memory.vhd" sub00/vhpl15 1457634169
+EN cpu_top_level NULL "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/cpu_top_level.vhd" sub00/vhpl18 1457634172
+EN control NULL "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/control.vhd" sub00/vhpl10 1457634164
+AR alu behavioral "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/ALU.vhd" sub00/vhpl13 1457634167
+AR control behavioral "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/control.vhd" sub00/vhpl11 1457634165
+AR cpu_top_level behavioral "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/cpu_top_level.vhd" sub00/vhpl19 1457634173
+AR writeback behavioral "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/writeback.vhd" sub00/vhpl17 1457634171
+EN alu NULL "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/ALU.vhd" sub00/vhpl12 1457634166

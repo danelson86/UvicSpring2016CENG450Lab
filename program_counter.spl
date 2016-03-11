@@ -1,8 +1,0 @@
-[Inputs]
-CLK
-RST
-IsBranchTaken
-=BranchAddr[15:0]=
-[Outputs]
-=PcOut[15:0]=
-[BiDir]

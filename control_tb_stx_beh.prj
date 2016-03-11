@@ -1,0 +1,5 @@
+vhdl isim_temp "MicroprocessorMisc.vhd"
+vhdl isim_temp "register.vhd"
+vhdl isim_temp "BusyStatusRegister.vhd"
+vhdl isim_temp "control.vhd"
+vhdl isim_temp "control_tb.vhd"

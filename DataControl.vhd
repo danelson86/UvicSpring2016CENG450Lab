@@ -1,0 +1,310 @@
+------------------------------------------------------------------------------------
+---- Company: 
+---- Engineer: 
+--
+---- Create Date:    01:28:07 03/06/2016 
+---- Design Name: 
+---- Module Name:    DataControl - Behavioral 
+---- Project Name: 
+---- Target Devices: 
+---- Tool versions: 
+---- Description: 
+----
+---- Dependencies: 
+----
+---- Revision: 
+---- Revision 0.01 - File Created
+---- Additional Comments: 
+----
+------------------------------------------------------------------------------------
+--library IEEE;
+--library work;
+--use IEEE.STD_LOGIC_1164.ALL;
+--use IEEE.NUMERIC_STD.ALL;
+--use work.MicroprocessorMisc.ALL;
+--
+--entity DataControl is
+--	Port(		CLK : in std_logic:= '0';
+--				RST : in std_logic:= '0';
+--				Instr : in DecodedInstruction;
+--				InPortData  : in  STD_LOGIC_VECTOR (15 downto 0):= X"0000";
+--				CurrentPC : in STD_LOGIC_VECTOR (15 downto 0) := X"0000";
+--				DataIn : in DataBus;
+--				DataOut : out DataBus;
+--				dataHazard : out std_logic := '0';
+--				BranchEvent : BranchData);
+--end DataControl;
+--
+--architecture Behavioral of DataControl is
+--
+----------------------------------------Main Register ----------------------------------------------------------------
+--
+--	component register_file is
+--		port(
+--				rst : in std_logic;
+--				clk : in std_logic;
+--				--read signals
+--				rd_index1: in std_logic_vector(2 downto 0);
+--				rd_data1: out std_logic_vector(15 downto 0);
+--				rd_index2: in std_logic_vector(2 downto 0);
+--				rd_data2: out std_logic_vector(15 downto 0);
+--				--write signals
+--				wr_index: in std_logic_vector(2 downto 0);
+--				wr_data: in std_logic_vector(15 downto 0);
+--				wr_enable: in std_logic);
+--	end component;
+--	
+--	-- Signals for MainRegister File
+--	signal rd_index1 : std_logic_vector(2 downto 0) := "000";
+--	signal rd_data1 : std_logic_vector(15 downto 0) := X"0000";
+--	signal rd_index2 : std_logic_vector(2 downto 0):= "000";
+--	signal rd_data2 : std_logic_vector(15 downto 0):= X"0000";
+--	signal wr_index : std_logic_vector(2 downto 0):= "000";
+--	signal wr_data : std_logic_vector(15 downto 0):= X"0000";
+--	signal wr_enable : std_logic:= '0';
+--	
+----------------------------------------Busy Status Register ----------------------------------------------------------------
+--	
+--	component BusyStatusRegister is
+--	Port( rst : in std_logic := '0';
+--			clk : in std_logic  := '0';
+--			--read signals
+--			rd_index1: in std_logic_vector(2 downto 0):= "000";
+--			rd_data1: out std_logic  := '0';
+--			rd_index2: in std_logic_vector(2 downto 0):= "000";
+--			rd_data2: out std_logic  := '0';
+--			
+--			--write signals
+--			wb_rqst_addr: in std_logic_vector(2 downto 0):= "000";
+--			wb_rqst : in std_logic := '0';
+--			wb_addr: in std_logic_vector(2 downto 0):= "000";
+--			wb_enable: in std_logic := '0');
+--	end component;
+--	
+--	--read signals
+--	signal brd_index1:  std_logic_vector(2 downto 0):= "000";
+--	signal brd_data1:  std_logic := '0';
+--	signal brd_index2:  std_logic_vector(2 downto 0):= "000";
+--	signal brd_data2:  std_logic := '0';
+--
+--
+--	signal OPCODE : STD_LOGIC_VECTOR (6 downto 0);			
+--	signal ra : STD_LOGIC_VECTOR (2 downto 0);
+--	signal rb :  STD_LOGIC_VECTOR (2 downto 0);
+--	signal rc :  STD_LOGIC_VECTOR (2 downto 0);
+--	signal c1 : STD_LOGIC_VECTOR (15 downto 0);
+--	signal imm : STD_LOGIC_VECTOR (7 downto 0);	
+--	signal m1 : std_logic;
+--	signal disp1 : std_logic_vector(8 downto 0);
+--	signal disps : std_logic_vector(5 downto 0);
+--
+--
+--	signal z_flag :std_logic :='0';
+--	signal n_flag :std_logic :='0';
+--	signal n_bit :std_logic_vector(0 downto 0);
+--	signal BRR_PC : STD_LOGIC_VECTOR (15 downto 0):= X"0000";
+--	signal BR_PC : STD_LOGIC_VECTOR (15 downto 0):= X"0000";
+--	signal NB_PC : STD_LOGIC_VECTOR (15 downto 0):= X"0000";
+--	
+--	signal BranchEventTemp : BranchData;
+--	
+--	
+--begin
+--	MainRegister : register_file port map(rst, clk, rd_index1, rd_data1, rd_index2, rd_data2, wr_index,wr_data,wr_enable);												
+--	BusyRegister : BusyStatusRegister port map (rst, clk, brd_index1, brd_data1, brd_index2, brd_data2, DataOutTemp.Addr, DataOutTemp.WrEn,DataIn.Addr,DataIn.WrEn);	
+--
+--	--Decode Instruction
+--	opcode <= INSTR(15 downto 9);
+--	ra <= INSTR(8 downto 6);
+--	rb <= INSTR(5 downto 3);
+--	rc <= INSTR(2 downto 0);
+--	c1 <= std_logic_vector(resize(unsigned(INSTR(3 downto 0)), 16));
+--	imm <= (INSTR(7 downto 0));
+--	m1 <= (INSTR(8));
+--	disp1 <= INSTR(8 downto 0);
+--	disps  <= INSTR(5 downto 0);
+--
+--
+--	------------------------------------------- Write Main Reg Operations ---------------------------------------------------------------------
+--	wr_index  <= 		 DataIn.addr when ( DataIn.WrEn = '1' ) else
+--							 ("111") when (OPCODE = oBRSUB) else
+--							 ("111") when (OPCODE = oLOADIMM) else "000";
+--
+--	wr_data	 <= 		 DataIn.Data1 when ( DataIn.WrEn  = '1' ) else X"0000";
+--							 NB_PC when (OPCODE = oBRSUB) else X"0000";
+--
+--	wr_enable  <=  	 '1' when (DataIn.WrEn  = '1') else
+--							 '1' when (OPCODE = oBRSUB) else
+--							 '1' when (OPCODE = oLOADIMM) else '0';
+--							 	 
+----------------------------------------------Read Main Reg Port1  --------------------------------------------------------
+--
+--	rd_index1   <=		 Instr.ra when (OPCODE =  oSHL) else 
+--							 Instr.ra when (OPCODE =  oSHR) else 
+--							 Instr.ra when (OPCODE =  oOUT) else 
+--							 Instr.ra when (OPCODE =  oNAND) else 
+--							 Instr.ra when (OPCODE =  oSTORE) else 
+--							 Instr.ra when (OPCODE =  oTEST) else 
+--							 Instr.ra when (OPCODE =   oBR) else 
+--							 Instr.ra when (OPCODE =  oBRN) else 
+--							 Instr.ra when (OPCODE =  oBRZ) else 
+--							 Instr.ra when (OPCODE =  oLOAD) else 
+--							 Instr.ra when (OPCODE =  oBRSUB) else 
+--							 Instr.rb when (OPCODE =  oADD) else 
+--							 Instr.rb when (OPCODE =  oSUB) else 
+--							 Instr.rb when (OPCODE =  oMUL) else 
+--							 Instr.rb when (OPCODE =  oMOV) else 
+--							 "111" when (OPCODE =  oRETURN) else "000";				 
+--					 
+--	DataOutTemp.Data1  <=	 rd_data1 when (OPCODE = oSHL)	else
+--							 rd_data1 when (OPCODE = oSHR)	else
+--							 rd_data1 when (OPCODE = oOUT)	else
+--							 rd_data1 when (OPCODE = oNAND)	else
+--							 rd_data1 when (OPCODE = oADD)	else
+--							 rd_data1 when (OPCODE = oMOV)	else
+--							 rd_data1 when (OPCODE = oSTORE)	else
+--							 rd_data1 when (OPCODE = oMUL)	else
+--							 rd_data1 when (OPCODE = oRETURN) else
+--							 InPortData   when (OPCODE = oIN)	else X"0000";
+--					 	
+--
+---------------------------------------------- Read Main Reg Port2  --------------------------------------------------------	
+--	rd_index2 <= 		 Instr.rb when (OPCODE = oLOAD ) else
+--							 Instr.rb when (OPCODE = oSTORE ) else
+--							 Instr.rb when (OPCODE = oNAND ) else
+--							 Instr.rc when (OPCODE = oADD ) else
+--							 Instr.rc when (OPCODE = oSUB ) else
+--							 Instr.rc when (OPCODE = oMUL ) else "000";				 
+--	 
+--	DataOutTemp.Data2  <=	 rd_data2 when (OPCODE = oLOAD ) else	 
+--							 rd_data2 when (OPCODE = oSTORE) else	
+--							 rd_data2 when (OPCODE = oNAND) else	
+--							 rd_data2 when (OPCODE =  oADD) else	
+--							 rd_data2 when (OPCODE = oSUB) else	
+--							 rd_data2 when (OPCODE = oMUL) else	
+--							 Instr.c1		  when (OPCODE = oSHL) else	
+--							 Instr. c1		  when (OPCODE = oSHR) else	X"0000";
+--							 
+----------------------------------------------Data Hazard Detection---------------------------------------------------------------------------------
+--
+--	brd_index1 <= Instr.ra when (OPCODE = oNAND) else
+--					 Instr.ra when (OPCODE = oSHR) else
+--					 Instr.ra when (OPCODE = oSHL) else
+--					 Instr.ra when (OPCODE = oTEST) else
+--					 Instr.ra when (OPCODE = oMOV) else
+--					 Instr.ra when (OPCODE = oLOAD) else
+--					 Instr.ra when (OPCODE = oSTORE) else
+--					 Instr.ra when (OPCODE = oBR) else
+--					 Instr.ra when (OPCODE = oBRN) else
+--					 Instr.ra when (OPCODE = oBRZ) else
+--					 Instr.ra when (OPCODE = oBRSUB) else
+--					 Instr.ra when (OPCODE = oRETURN) else
+--					 Instr.rb when (OPCODE = oMOV) else
+--					 Instr.rb when (OPCODE = oLOAD) else
+--					 Instr.rb when (OPCODE = oSTORE) else
+--					 Instr.rb when (OPCODE = oOUT) else
+--					 Instr.rb when (OPCODE = oNAND) else
+--					 Instr.rb when (OPCODE = oMUL) else
+--					 Instr.rb when (OPCODE = oSUB) else
+--					 Instr.rb when (OPCODE = oADD) else "000";
+--	
+--	brd_index2 <= Instr.rc when (OPCODE = oMOV) else
+--					 Instr.rc when (OPCODE = oLOAD) else
+--					 Instr.rc when (OPCODE = oSTORE) else
+--					 Instr.rc when (OPCODE = oOUT) else
+--					 Instr.rc when (OPCODE = oNAND) else
+--					 Instr.rc when (OPCODE = oMUL) else
+--					 Instr.rc when (OPCODE = oSUB) else
+--					 Instr.rc when (OPCODE = oADD) else "000";				 
+--					 
+--   DataOutTemp.WrEn  <=  '1' when (OPCODE =  oADD and dataHazardLocal= '0') else
+--					 '1' when (OPCODE =  oSUB and dataHazardLocal= '0') else
+--					 '1' when (OPCODE =  oMUL and dataHazardLocal= '0') else
+--					 '1' when (OPCODE =  oNAND and dataHazardLocal= '0') else
+--					 '1' when (OPCODE =  oSHL and dataHazardLocal= '0') else
+--					 '1' when (OPCODE =  oSHR and dataHazardLocal= '0') else
+--					 '1' when (OPCODE =  oIN and dataHazardLocal= '0') else
+--					 '1' when (OPCODE =  oMOV and dataHazardLocal= '0') else
+--					 '1' when (OPCODE =  oLOAD and dataHazardLocal= '0') else '0';
+--					 
+--   DataOutTemp.Addr <=   Instr.ra when (OPCODE =  oADD and dataHazardLocal= '0') else
+--								 Instr.ra when (OPCODE =  oSUB and dataHazardLocal= '0') else
+--								 Instr.ra when (OPCODE =  oMUL and dataHazardLocal= '0') else
+--								 Instr.ra when (OPCODE =  oNAND and dataHazardLocal= '0') else
+--								 Instr.ra when (OPCODE =  oSHL and dataHazardLocal= '0') else
+--								 Instr.ra when (OPCODE =  oSHR and dataHazardLocal= '0') else
+--								 Instr.ra when (OPCODE =  oIN and dataHazardLocal= '0') else
+--								 Instr.ra when (OPCODE =  oMOV and dataHazardLocal= '0') else
+--								 Instr.ra when (OPCODE =  oLOAD and dataHazardLocal= '0') else "000";
+--				
+--	DataOutTemp.Microcode  <= 	mADD when (OPCODE = oADD and dataHazardLocal= '0') else
+--										mSUB when (OPCODE = oSUB and dataHazardLocal= '0') else
+--										mMUL when (OPCODE = oMUL and dataHazardLocal= '0') else
+--										mNAND when (OPCODE = oNAND and dataHazardLocal= '0') else
+--										mSHL when (OPCODE = oSHL and dataHazardLocal= '0') else
+--										mSHR when (OPCODE = oSHR and dataHazardLocal= '0') else
+--										mLOAD when (OPCODE = oLOAD and dataHazardLocal= '0') else
+--										mLOADIMM when (OPCODE = oLOADIMM and dataHazardLocal= '0') else
+--										mMOV when (OPCODE = oMOV and dataHazardLocal= '0') else
+--										mIN when (OPCODE = oIN and dataHazardLocal= '0') else
+--										mOUT when (OPCODE = oOUT and dataHazardLocal= '0') else
+--										mOUT when (OPCODE = oSTORE and dataHazardLocal= '0') else X"0";
+--									 
+--	dataHazardLocal <= '1' when(brd_data1 = '1' or brd_data2 = '1') else '0';
+--	  
+-----------------------------------------------------------Branch Handling ---------------------------------------------------------------------------
+--	n_bit <=  (Data1 (15 downto 15));
+--	BRR_PC <= std_logic_vector(signed(CurrentPC) + resize(signed(disp1), 16) );
+--	BR_PC  <= std_logic_vector( signed(Data1) + resize(signed(disps), 16) );
+--	NB_PC <= std_logic_vector( signed(CurrentPC) + 1 );
+--
+--	n_flag <= '1' when ( n_bit = "1" and OPCODE = oTEST ) else
+--				 '0' when ( n_bit = "0" and OPCODE = oTEST );
+--				 
+--	
+--	z_flag <= '1' when (Data1 =  X"0000" and OPCODE = oTEST ) else 
+--				 '0' when (Data1 /=  X"0000" and OPCODE = oTEST  );
+--
+--	
+--	BranchEventTemp.detect <= '1'  when (OPCODE = oBRR ) else
+--							 '1'  when (OPCODE = oBRRN and n_flag = '1' ) else
+--						    '1'  when (OPCODE = oBRRZ and z_flag = '1') else 
+--							 '1'  when (OPCODE = oBR ) else 
+--							 '1'  when (OPCODE = oBRN  and  n_flag = '1') else 
+--							 '1'  when (OPCODE = oBRZ and z_flag = '1' ) else 
+--							 '1'  when (OPCODE = oBRSUB ) else
+--							 '1'  when (OPCODE = oRETURN ) else  '0';
+--	
+--	BranchEventTemp.PC <= BRR_PC   when (OPCODE = oBRR ) else
+--					 BRR_PC   when (OPCODE = oBRRN and n_flag = '1' ) else
+--					 BRR_PC   when (OPCODE = oBRRZ and z_flag = '1') else 
+--					 BR_PC    when (OPCODE = oBR ) else 
+--					 BR_PC    when (OPCODE = oBRN and n_flag = '1') else 
+--					 BR_PC    when (OPCODE = oBRZ and z_flag = '1') else 
+----					 Data_1   when (OPCODE = oBRSUB ) else --Need intermediate signal
+--					 Data1 when (OPCODE = oRETURN ) else  NB_PC;					
+--	process(clk)
+--	begin
+--	
+--	
+------------------------------------------------Latching events -------------------------------------------------------------------------------------
+--	
+--	
+--		if falling_edge(clk) then
+--			BranchEvent <= BranchEventTemp;
+--		end if;
+--	end process;
+--	
+--	process(clk)
+--	begin
+--		if falling_edge(clk) then
+--			dataHazard<= dataHazardLocal;
+--		end if;
+--	end process;
+--	
+--	
+--	
+--	
+--	
+--end Behavioral;
+--

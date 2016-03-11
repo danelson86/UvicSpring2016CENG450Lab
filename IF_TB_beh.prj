@@ -1,0 +1,6 @@
+vhdl work "program_counter.vhd"
+vhdl work "demo_rom.vhd"
+vhdl work "instruction_fetch.vhd"
+vhdl work "IF_TB.vhd"
+verilog work "ram_16x16.vf"
+verilog work "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

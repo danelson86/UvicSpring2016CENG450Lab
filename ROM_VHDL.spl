@@ -1,6 +1,0 @@
-[Inputs]
-clk
-=addr[6:0]=
-[Outputs]
-=data[15:0]=
-[BiDir]

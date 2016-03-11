@@ -7,17 +7,44 @@
    <ItemView engineview="SynthesisOnly" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/EXtoMem_pipeline - Behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|EXtoMem_pipeline.vhd</ClosedNode>
+         <ClosedNode>/IB_to_EX_register - Behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|IB_to_EX_register.vhd</ClosedNode>
+         <ClosedNode>/IDtoEX_Pipeline - Behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|IDtoEX_pipeline.vhd</ClosedNode>
+         <ClosedNode>/IFtoID_pipeline - Behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|IFtoID_pipeline.vhd</ClosedNode>
+         <ClosedNode>/IFtoID_register - Behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|IFtoID_register.vhd</ClosedNode>
+         <ClosedNode>/MEMtoWB_pipeline - Behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|MEMtoWB_pipeline.vhd</ClosedNode>
+         <ClosedNode>/control - Behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|control.vhd</ClosedNode>
+         <ClosedNode>/cpu C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu.sch</ClosedNode>
+         <ClosedNode>/cpu C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu.sch/XLXI_10 - instruction_fetch - Behavioral</ClosedNode>
+         <ClosedNode>/cpu C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu.sch/XLXI_2 - IFtoID_register - Behavioral</ClosedNode>
+         <ClosedNode>/cpu C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu.sch/XLXI_2 - instruction_fetch - Behavioral</ClosedNode>
+         <ClosedNode>/cpu C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu.sch/XLXI_4 - EXtoMem_pipeline - Behavioral</ClosedNode>
+         <ClosedNode>/cpu C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu.sch/XLXI_4 - memory - Behavioral</ClosedNode>
+         <ClosedNode>/cpu C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu.sch/XLXI_6 - memory - Behavioral</ClosedNode>
+         <ClosedNode>/cpu C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu.sch/XLXI_9 - MEMtoWB_pipeline - Behavioral</ClosedNode>
+         <ClosedNode>/cpu_top_level - Behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu_top_level.vhd/ExToMEM_pipe - EXtoMem_pipeline - Behavioral</ClosedNode>
+         <ClosedNode>/cpu_top_level - Behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu_top_level.vhd/ExToMem_pipe - EXtoMem_pipeline - Behavioral</ClosedNode>
+         <ClosedNode>/cpu_top_level - Behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu_top_level.vhd/ID_stage - control - Behavioral</ClosedNode>
+         <ClosedNode>/cpu_top_level - Behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu_top_level.vhd/IDtoEx_pipe - IDtoEX_Pipeline - Behavioral</ClosedNode>
+         <ClosedNode>/cpu_top_level - Behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu_top_level.vhd/IFtoID_pipe - IFtoID_pipeline - Behavioral</ClosedNode>
+         <ClosedNode>/cpu_top_level - Behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu_top_level.vhd/MEMToWB_pipe - MEMtoWB_pipeline - Behavioral</ClosedNode>
+         <ClosedNode>/cpu_top_level - Behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu_top_level.vhd/MEM_Stage - memory - Behavioral</ClosedNode>
+         <ClosedNode>/cpu_top_level - Behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu_top_level.vhd/MEM_stage - memory - Behavioral</ClosedNode>
+         <ClosedNode>/cpu_top_level - Behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu_top_level.vhd/MemToWB_pipe - MEMtoWB_pipeline - Behavioral</ClosedNode>
+         <ClosedNode>/cpu_top_level - Behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu_top_level.vhd/decode_stage - control - Behavioral</ClosedNode>
+         <ClosedNode>/instruction_fetch - Behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|instruction_fetch.vhd</ClosedNode>
+         <ClosedNode>/memory - Behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|memory.vhd</ClosedNode>
+         <ClosedNode>/ram_14x16 C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|ram_14x16.sch</ClosedNode>
+         <ClosedNode>/ram_16x16 C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|ram_16x16.sch</ClosedNode>
          <ClosedNode>/ram_16x16 C:|Users|OWner|Documents|CENG 450|lab|UvicSpring2016CENG450Lab-|ram_16x16.sch</ClosedNode>
          <ClosedNode>/ram_16x16 C:|Users|OWner|Documents|CENG 450|lab|UvicSpring2016CENG450Lab|ram_16x16.sch</ClosedNode>
       </ClosedNodes>
-      <SelectedItems>
-         <SelectedItem>cpu (C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/cpu.sch)</SelectedItem>
-      </SelectedItems>
+      <SelectedItems/>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001ad000000020000000000000000000000000200000064ffffffff000000810000000300000002000001ad0000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000223000000020000000000000000000000000200000064ffffffff000000810000000300000002000002230000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>cpu (C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/cpu.sch)</CurrentItem>
+      <CurrentItem>ID_Stage - Control - Behavioral (C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/control.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -25,42 +52,46 @@
          <ClosedNode>Design Utilities/Compile HDL Simulation Libraries</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Design Utilities</SelectedItem>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001be000000010000000100000000000000000000000064ffffffff000000810000000000000001000001be0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000e8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000e80000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Design Utilities</CurrentItem>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView guiview="File" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
-      <SelectedItems/>
+      <SelectedItems>
+         <SelectedItem>ALU.vhd</SelectedItem>
+      </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000000000000000100000000000000000000000000000000000001be000000040101000100000000000000000000000064ffffffff000000810000000000000004000000930000000100000000000000240000000100000000000000660000000100000000000000a10000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000000000000020100000000000000000000000000000000000001a7000000040101000100000000000000000000000064ffffffff000000810000000000000004000000bc0000000100000000000000210000000100000000000000660000000100000000000000640000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>ram_16x16.sch</CurrentItem>
+      <CurrentItem>ALU.vhd</CurrentItem>
    </ItemView>
    <ItemView guiview="Library" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
-      <SelectedItems/>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <SelectedItems>
+         <SelectedItem>instruction_fetch.vhd</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >5</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000000000000000100000000000000000000000000000000000000f8000000010001000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000000000000000100000000000000000000000000000000000000d7000000010001000100000000000000000000000064ffffffff000000810000000000000001000000d70000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>work</CurrentItem>
+      <CurrentItem>instruction_fetch.vhd</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
          <ClosedNode>Configure Target Device</ClosedNode>
+         <ClosedNode>Design Utilities/Compile HDL Simulation Libraries</ClosedNode>
          <ClosedNode>Implement Design</ClosedNode>
-         <ClosedNode>Synthesize - XST</ClosedNode>
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
@@ -68,24 +99,51 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001be000000010000000100000000000000000000000064ffffffff000000810000000000000001000001be0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000e8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000e80000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/BusyRegister_tb - behavior C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|BusyRegister_tb.vhd</ClosedNode>
+         <ClosedNode>/IB_to_EX_register - Behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|IB_to_EX_register.vhd</ClosedNode>
+         <ClosedNode>/alu_test - behavior C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|alu_test.vhd</ClosedNode>
+         <ClosedNode>/control_tb - behavior C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|control_tb.vhd</ClosedNode>
+         <ClosedNode>/cpu_cpu_sch_tb - behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu_tb.vhd</ClosedNode>
+         <ClosedNode>/cpu_cpu_sch_tb - behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu_tb.vhd/UUT - cpu/XLXI_4 - memory - Behavioral</ClosedNode>
+         <ClosedNode>/cpu_sch_tb - behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu_tb.vhd</ClosedNode>
+         <ClosedNode>/cpu_sch_tb - behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu_tb.vhd/UUT - cpu/XLXI_1 - instruction_fetch - Behavioral</ClosedNode>
+         <ClosedNode>/cpu_sch_tb - behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu_tb.vhd/UUT - cpu/XLXI_6 - memory - Behavioral</ClosedNode>
+         <ClosedNode>/cpu_sch_tb - behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu_tb.vhd/UUT - cpu/XLXI_8 - control - Behavioral</ClosedNode>
+         <ClosedNode>/cpu_sch_tb - behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu_tb.vhd/UUT - cpu/XLXI_9 - MEMtoWB_pipeline - Behavioral</ClosedNode>
+         <ClosedNode>/cpu_top_level - Behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu_top_level.vhd</ClosedNode>
+         <ClosedNode>/cpu_top_level_tb - behavior C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu_top_level_tb.vhd/uut - cpu_top_level - Behavioral/ExToMEM_pipe - EXtoMem_pipeline - Behavioral</ClosedNode>
+         <ClosedNode>/cpu_top_level_tb - behavior C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu_top_level_tb.vhd/uut - cpu_top_level - Behavioral/ID_stage - control - Behavioral</ClosedNode>
+         <ClosedNode>/cpu_top_level_tb - behavior C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu_top_level_tb.vhd/uut - cpu_top_level - Behavioral/IDtoEx_pipe - IDtoEX_Pipeline - Behavioral</ClosedNode>
+         <ClosedNode>/cpu_top_level_tb - behavior C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu_top_level_tb.vhd/uut - cpu_top_level - Behavioral/IF_stage - instruction_fetch - Behavioral</ClosedNode>
+         <ClosedNode>/cpu_top_level_tb - behavior C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu_top_level_tb.vhd/uut - cpu_top_level - Behavioral/IFtoID_pipe - IFtoID_pipeline - Behavioral</ClosedNode>
+         <ClosedNode>/cpu_top_level_tb - behavior C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu_top_level_tb.vhd/uut - cpu_top_level - Behavioral/MEMToWB_pipe - MEMtoWB_pipeline - Behavioral</ClosedNode>
+         <ClosedNode>/cpu_top_level_tb - behavior C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|cpu_top_level_tb.vhd/uut - cpu_top_level - Behavioral/MEM_stage - memory - Behavioral</ClosedNode>
+         <ClosedNode>/memory_tb - behavior C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|MEM_tb.vhd/uut - memory - Behavioral</ClosedNode>
+         <ClosedNode>/pipeline_16bit_tb - behavior C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|pipeline_16bit_tb.vhd</ClosedNode>
+         <ClosedNode>/ram_14x16 C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|ram_14x16.sch</ClosedNode>
+         <ClosedNode>/ram_16x16_ram_16x16_sch_tb - behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|ram_16x16_tb.vhd</ClosedNode>
+         <ClosedNode>/ram_16x16_ram_16x16_sch_tb - behavioral C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|ram_16x16_tb.vhd/UUT - ram_16x16</ClosedNode>
+         <ClosedNode>/register_file_tb - behavior C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|register_file_tb.vhd</ClosedNode>
          <ClosedNode>/register_test - behavior C:|Users|nelsonda|lab2|register_test.vhd</ClosedNode>
          <ClosedNode>/register_test - behavioural C:|Users|nelsonda|lab2|register_test.vhd</ClosedNode>
+         <ClosedNode>/rom_8x16_tb - behavior C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|rom_8x16_tb.vhd</ClosedNode>
+         <ClosedNode>/tb - behavior C:|Users|David|Documents|UVic|Spring 2016|CENG 450|Project|UvicSpring2016CENG450Lab-master|UvicSpring2016CENG450Lab-master|IFtoID_pipe_tb.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>cpu_tb - behavioral (C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/cpu_tb.vhd)</SelectedItem>
+         <SelectedItem>cpu_top_level_tb - behavior (C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/cpu_top_level_tb.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >3</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >5</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001c1000000020000000000000000000000000200000064ffffffff000000810000000300000002000001c10000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000237000000020000000000000000000000000200000064ffffffff000000810000000300000002000002370000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>cpu_tb - behavioral (C:/Users/OWner/Documents/CENG 450/lab/UvicSpring2016CENG450Lab/cpu_tb.vhd)</CurrentItem>
+      <CurrentItem>cpu_top_level_tb - behavior (C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/cpu_top_level_tb.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -93,13 +151,13 @@
          <ClosedNode>Design Utilities/Compile HDL Simulation Libraries</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001be000000010000000100000000000000000000000064ffffffff000000810000000000000001000001be0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000e8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000e80000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -110,12 +168,12 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001be000000010000000100000000000000000000000064ffffffff000000810000000000000001000001be0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000d7000000010000000100000000000000000000000064ffffffff000000810000000000000001000000d70000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>Simulate Behavioral Model</CurrentItem>
    </ItemView>
-   <SourceProcessView>000000ff00000000000000020000011b0000011b01000000050100000002</SourceProcessView>
-   <CurrentView>Implementation</CurrentView>
+   <SourceProcessView>000000ff0000000000000002000001940000009a01000000050100000002</SourceProcessView>
+   <CurrentView>Behavioral Simulation</CurrentView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_SCHEMATIC" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
@@ -126,13 +184,13 @@
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Synthesize - XST</SelectedItem>
+         <SelectedItem>Design Utilities</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001be000000010000000100000000000000000000000064ffffffff000000810000000000000001000001be0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000e8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000e80000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Synthesize - XST</CurrentItem>
+      <CurrentItem>Design Utilities</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="DESUT_SCHEMATIC" guiview="Process" >
       <ClosedNodes>
@@ -140,13 +198,13 @@
          <ClosedNode>ISim Simulator</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001be000000010000000100000000000000000000000064ffffffff000000810000000000000001000001be0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000105000000010000000100000000000000000000000064ffffffff000000810000000000000001000001050000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_XCO" guiview="Process" >
       <ClosedNodes>
@@ -170,7 +228,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000012d000000010000000100000000000000000000000064ffffffff0000008100000000000000010000012d0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000012e000000010000000100000000000000000000000064ffffffff0000008100000000000000010000012e0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem/>
    </ItemView>

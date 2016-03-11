@@ -1,5 +1,7 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
+use work.MicroprocessorMisc.ALL;
+
  
 ENTITY control_tb IS
 END control_tb;
@@ -8,35 +10,26 @@ ARCHITECTURE behavior OF control_tb IS
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT control
-    PORT(
-         INSTR : IN  std_logic_vector(15 downto 0);
-         CLK : IN  std_logic;
-         RST : IN  std_logic;
-         RegRead1 : OUT  std_logic_vector(2 downto 0);
-         RegRead2 : OUT  std_logic_vector(2 downto 0);
-         RegWrite : OUT  std_logic_vector(2 downto 0);
-         RegWriteEn : OUT  std_logic;
-         ALUMode : OUT  std_logic_vector(2 downto 0);
-         ImmData : OUT  std_logic_vector(15 downto 0);
-         RegRead2FromImm : OUT  std_logic
-        );
-    END COMPONENT;
+  COMPONENT Control is
+	Port(		CLK : in std_logic:= '0';
+				RST : in std_logic:= '0';
+				FetchData: in FetchData :=(Instr=>X"0000",PC=>X"FFFF");
+				InPortData  : in  STD_LOGIC_VECTOR (15 downto 0):= X"0000";
+				DataIn : in DataBus := (Data1=>X"0000",Data2=> X"0000", Addr=>X"0",Microcode => X"0");
+				DataOut : out DataBus := (Data1=>X"0000",Data2=> X"0000", Addr=>X"0",Microcode => X"0");
+				dataHazard : out std_logic := '0';
+				BranchEvent : out BranchData :=(detect=>'1', PC =>X"0000"));
+	end COMPONENT;
     
 
-   --Inputs
-   signal INSTR : std_logic_vector(15 downto 0) := (others => '0');
-   signal CLK : std_logic := '0';
-   signal RST : std_logic := '0';
-
- 	--Outputs
-   signal RegRead1 : std_logic_vector(2 downto 0);
-   signal RegRead2 : std_logic_vector(2 downto 0);
-   signal RegWrite : std_logic_vector(2 downto 0);
-   signal RegWriteEn : std_logic;
-   signal ALUMode : std_logic_vector(2 downto 0);
-   signal ImmData : std_logic_vector(15 downto 0);
-   signal RegRead2FromImm : std_logic;
+   signal CLK :  std_logic:= '0';
+	signal RST :  std_logic:= '0';
+	signal FetchData:  FetchData :=(Instr=>X"0000",PC=>X"FFFF");
+	signal InPortData  :   STD_LOGIC_VECTOR (15 downto 0):= X"0000";
+	signal DataIn :  DataBus := (Data1=>X"0000",Data2=> X"0000", Addr=>X"0",Microcode => X"0");
+	signal DataOut :  DataBus := (Data1=>X"0000",Data2=> X"0000", Addr=>X"0",Microcode => X"0");
+	signal dataHazard :  std_logic := '0';
+	signal BranchEvent :  BranchData :=(detect=>'1', PC =>X"0000");
 
    -- Clock period definitions
    constant CLK_period : time := 10 ns;
@@ -45,17 +38,14 @@ BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
    uut: control PORT MAP (
-          INSTR => INSTR,
-          CLK => CLK,
-          RST => RST,
-          RegRead1 => RegRead1,
-          RegRead2 => RegRead2,
-          RegWrite => RegWrite,
-          RegWriteEn => RegWriteEn,
-          ALUMode => ALUMode,
-          ImmData => ImmData,
-          RegRead2FromImm => RegRead2FromImm
-        );
+					CLK => CLK,
+					RST => RST,
+					FetchData => FetchData,
+					Inportdata => Inportdata,
+					DataIN => DataIN,
+					DataOut => DataOut,
+					dataHazard => dataHazard,
+					BranchEvent=> BranchEvent);
 
    -- Clock process definitions
    CLK_process :process
@@ -73,11 +63,33 @@ BEGIN
       -- hold reset state for 100 ns.
       wait for 100 ns;	
       wait for CLK_period*10;
-		RST <= '0';
+		RST <= '0'; 
 
-		--SHR R0 3
-      INSTR <= "0000101000000011";
-		wait for 100 ns;	
+
+		FetchData.INSTR <= "0000001000001011";  -- Add R0,R1,R2
+		wait for CLK_period;	
+		FetchData.INSTR <= "0000001000001010";  -- BRR 3
+		wait for CLK_period;	
+		FetchData.INSTR <= "0000001000001011";  --MUL R0,R1,R2 (Should be hazard but for now)
+		wait for CLK_period;	
+		FetchData.INSTR <= "0000001000001010";  -- BRR 3
+		wait for CLK_period;	
+		FetchData.INSTR <= "0000001000001011"; --NOP
+		wait for CLK_period;	
+		FetchData.INSTR <= "0000001000001010"; -- Test R0 (Should be FFFF)
+		wait for CLK_period;	
+		FetchData.INSTR <= "0000001000001011"; -- BBRN -4
+		wait for CLK_period;	
+		FetchData.INSTR <= "0000001000001010"; --NOP
+		wait for CLK_period;	
+		
+		wait for CLK_period;	
+		
+		wait for CLK_period;	
+		wait for CLK_period;	
+		wait for CLK_period;	
+		wait for CLK_period;	
+		
 
       wait;
    end process;

@@ -8,7 +8,6 @@
     <netlist>
         <signal name="ADDR(15:0)" />
         <signal name="ADDR(13:0)" />
-        <signal name="XLXN_7" />
         <signal name="WE" />
         <signal name="CLK" />
         <signal name="D_IN(15:0)" />

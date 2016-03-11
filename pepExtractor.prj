@@ -1,1 +1,2 @@
-work	"control.vhd"
+work	"MasterRegister.vhd"
+work	"MicroprocessorMisc.vhd"

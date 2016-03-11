@@ -44,8 +44,8 @@ ARCHITECTURE behavior OF pc_tb IS
          CLK : IN  std_logic;
          RST : IN  std_logic;
          IsBranchTaken : IN  std_logic;
-         BranchAddr : IN  std_logic_vector(15 downto 0);
-         PcOut : OUT  std_logic_vector(15 downto 0)
+         BranchAddr : IN  std_logic_vector(7 downto 0);
+         PcOut : OUT  std_logic_vector(7 downto 0)
         );
     END COMPONENT;
     
@@ -53,10 +53,10 @@ ARCHITECTURE behavior OF pc_tb IS
    signal CLK : std_logic := '0';
    signal RST : std_logic := '0';
    signal IsBranchTaken : std_logic := '0';
-   signal BranchAddr : std_logic_vector(15 downto 0) := (others => '0');
+   signal BranchAddr : std_logic_vector(7 downto 0) := (others => '0');
 
  	--Outputs
-   signal PcOut : std_logic_vector(15 downto 0);
+   signal PcOut : std_logic_vector(7 downto 0);
 
    -- Clock period definitions
    constant CLK_period : time := 10 ns;
@@ -87,15 +87,15 @@ BEGIN
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;	
-		BranchAddr <= X"00FF";
+		BranchAddr <= X"0F";
 		IsBranchTaken <= '0';
 		
 		wait for 100 ns;	
 		
-		BranchAddr <= X"FF00";
+		BranchAddr <= X"F0";
 		IsBranchTaken <= '1';
 
-		
+		wait for 100 ns;	
 
 
       wait;

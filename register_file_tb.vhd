@@ -18,7 +18,11 @@ ARCHITECTURE behavior OF register_file_tb IS
          rd_data2 : OUT  std_logic_vector(15 downto 0);
          wr_index : IN  std_logic_vector(2 downto 0);
          wr_data : IN  std_logic_vector(15 downto 0);
-         wr_enable : IN  std_logic
+         wr_enable : IN  std_logic;
+			
+			reg1 : out std_logic_vector(15 downto 0);
+			reg2 : out std_logic_vector(15 downto 0);
+			reg3 : out std_logic_vector(15 downto 0)
         );
     END COMPONENT;
     
@@ -31,7 +35,9 @@ ARCHITECTURE behavior OF register_file_tb IS
    signal wr_index : std_logic_vector(2 downto 0) := (others => '0');
    signal wr_data : std_logic_vector(15 downto 0) := (others => '0');
    signal wr_enable : std_logic := '0';
-
+	signal reg1 :  std_logic_vector(15 downto 0);
+	signal reg2 :  std_logic_vector(15 downto 0);
+	signal reg3 :  std_logic_vector(15 downto 0);
  	--Outputs
    signal rd_data1 : std_logic_vector(15 downto 0);
    signal rd_data2 : std_logic_vector(15 downto 0);
@@ -51,7 +57,10 @@ BEGIN
           rd_data2 => rd_data2,
           wr_index => wr_index,
           wr_data => wr_data,
-          wr_enable => wr_enable
+          wr_enable => wr_enable,
+			 reg1=> reg1,
+			 reg2 => reg2,
+			 reg3 => reg3
         );
 
    -- Clock process definitions

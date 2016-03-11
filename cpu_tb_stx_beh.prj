@@ -1,8 +1,0 @@
-vhdl isim_temp "register.vhd"
-vhdl isim_temp "mux_3to1_16bit.vhd"
-vhdl isim_temp "demux_3to1_16bit.vhd"
-vhdl isim_temp "demo_rom.vhd"
-vhdl isim_temp "control.vhd"
-vhdl isim_temp "ALU.vhd"
-vhdl isim_temp "cpu_tb.vhd"
-verilog isim_temp "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

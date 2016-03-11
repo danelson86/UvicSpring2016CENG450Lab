@@ -1,8 +1,0 @@
-[Inputs]
-=muxin[15:0]=
-=sel[1:0]=
-[Outputs]
-=muxout1[15:0]=
-=muxout2[15:0]=
-=muxout3[15:0]=
-[BiDir]

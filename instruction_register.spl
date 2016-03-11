@@ -1,7 +1,0 @@
-[Inputs]
-CLK
-RST
-=Pc_In[15:0]=
-[Outputs]
-=Instr_Out[15:0]=
-[BiDir]

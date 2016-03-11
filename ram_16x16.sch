@@ -123,14 +123,6 @@
         <bustap x2="1504" y1="1424" y2="1424" x1="1408" />
         <bustap x2="1504" y1="1088" y2="1088" x1="1408" />
         <bustap x2="1504" y1="768" y2="768" x1="1408" />
-        <branch name="D_IN(15:0)">
-            <wire x2="1408" y1="1776" y2="1776" x1="1328" />
-            <wire x2="1408" y1="752" y2="768" x1="1408" />
-            <wire x2="1408" y1="768" y2="1088" x1="1408" />
-            <wire x2="1408" y1="1088" y2="1424" x1="1408" />
-            <wire x2="1408" y1="1424" y2="1760" x1="1408" />
-            <wire x2="1408" y1="1760" y2="1776" x1="1408" />
-        </branch>
         <branch name="D_OUT(11:8)">
             <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="2144" y="1552" type="branch" />
             <wire x2="2144" y1="1552" y2="1552" x1="2016" />
@@ -159,7 +151,6 @@
             <wire x2="2256" y1="1552" y2="1888" x1="2256" />
             <wire x2="2256" y1="1888" y2="1904" x1="2256" />
         </branch>
-        <iomarker fontsize="28" x="1328" y="1776" name="D_IN(15:0)" orien="R180" />
         <iomarker fontsize="28" x="1344" y="640" name="ADDR(15:0)" orien="R180" />
         <iomarker fontsize="28" x="1248" y="816" name="WE" orien="R180" />
         <iomarker fontsize="28" x="1248" y="864" name="CLK" orien="R180" />
@@ -172,5 +163,14 @@
         </instance>
         <instance x="1744" y="656" name="XLXI_8" orien="R0">
         </instance>
+        <branch name="D_IN(15:0)">
+            <wire x2="1408" y1="1776" y2="1776" x1="1328" />
+            <wire x2="1408" y1="752" y2="768" x1="1408" />
+            <wire x2="1408" y1="768" y2="1088" x1="1408" />
+            <wire x2="1408" y1="1088" y2="1424" x1="1408" />
+            <wire x2="1408" y1="1424" y2="1760" x1="1408" />
+            <wire x2="1408" y1="1760" y2="1776" x1="1408" />
+        </branch>
+        <iomarker fontsize="28" x="1328" y="1776" name="D_IN(15:0)" orien="R180" />
     </sheet>
 </drawing>
