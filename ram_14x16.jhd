@@ -1,3 +1,0 @@
-MODULE ram_14x16
-	SUBMODULE blockram_14x16
-		INSTANCE XLXI_1

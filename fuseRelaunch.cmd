@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -o "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/cpu_top_level_tb_isim_beh.exe" -prj "C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/cpu_top_level_tb_beh.prj" "cpu_top_level_tb" 

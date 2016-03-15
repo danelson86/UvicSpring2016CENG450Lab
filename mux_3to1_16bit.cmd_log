@@ -1,4 +1,0 @@
-vhdtdtfi -lib work mux_3to1_16bit.vhd -prj lab2 -o mux_3to1_16bit.spl -module mux_3to1_16bit -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
-spl2sym -intstyle ise -family spartan3e mux_3to1_16bit.spl {C:/Users/OWner/Documents/CENG 450/lab/mux_3to1_16bit.sym} 
-vhdtdtfi -lib work mux_3to1_16bit.vhd -prj lab2 -o mux_3to1_16bit.spl -module mux_3to1_16bit -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
-spl2sym -intstyle ise -family spartan3e mux_3to1_16bit.spl {C:/Users/David/Documents/UVic/Spring 2016/CENG 450/Project/UvicSpring2016CENG450Lab-master/UvicSpring2016CENG450Lab-master/mux_3to1_16bit.sym} 

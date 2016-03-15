@@ -1,3 +1,0 @@
-vhdl work "register.vhd"
-vhdl work "MicroprocessorMisc.vhd"
-vhdl work "memory.vhd"

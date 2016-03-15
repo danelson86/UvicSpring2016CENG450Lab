@@ -1,4 +1,0 @@
-vhdtdtfi -lib work busmux_16bit.vhd -prj lab2 -o busmux_16bit.spl -module busmux_16bit -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
-spl2sym -intstyle ise -family spartan3e busmux_16bit.spl {C:/Users/OWner/Documents/CENG 450/lab/busmux_16bit.sym} 
-vhdtdtfi -lib work busmux_16bit.vhd -prj lab2 -o busmux_16bit.spl -module busmux_16bit -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
-spl2sym -intstyle ise -family spartan3e busmux_16bit.spl {C:/Users/OWner/Documents/CENG 450/lab/busmux_16bit.sym} 
